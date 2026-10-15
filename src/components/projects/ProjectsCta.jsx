@@ -7,7 +7,7 @@ export default function ProjectsCta() {
   return (
     <section className="relative isolate overflow-hidden bg-[#003B8E]">
       <img
-        src="/images/projects-cta.jpg"
+        src="/images/projects-cta.png"
         alt="Engineers reviewing plans at a construction site at sunset"
         className="absolute inset-y-0 left-0 -z-20 h-full w-full object-cover object-left lg:w-[62%]"
       />

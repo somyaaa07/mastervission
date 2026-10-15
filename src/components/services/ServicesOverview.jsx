@@ -7,31 +7,31 @@ const SERVICES = [
     icon: Home,
     title: "Residential Construction",
     text: "Custom homes and residential spaces built with precision, quality and modern design.",
-    image: "/images/service-residential.jpg",
+    image: "https://i.pinimg.com/736x/a9/15/a7/a915a721490370e52ca7ac4704439a22.jpg",
   },
   {
     icon: Building2,
     title: "Commercial Construction",
     text: "Office spaces, retail outlets and commercial complexes that enhance your business.",
-    image: "/images/service-commercial.jpg",
+    image: "https://i.pinimg.com/736x/1e/b6/f8/1eb6f8627bebd446b3918f8cd270519c.jpg",
   },
   {
     icon: Factory,
     title: "Industrial Construction",
     text: "Robust industrial infrastructure tailored for operational efficiency and safety.",
-    image: "/images/service-industrial.jpg",
+    image: "https://i.pinimg.com/736x/19/de/90/19de9080e6e5a2babb800a592a4a16a5.jpg",
   },
   {
     icon: HardHat,
     title: "Renovation & Remodeling",
     text: "Transform existing spaces with modern designs and improved functionality.",
-    image: "/images/service-renovation.jpg",
+    image: "https://i.pinimg.com/736x/f6/1f/d7/f61fd7ae53a369684804a7151381d8d7.jpg",
   },
   {
     icon: ClipboardCheck,
     title: "Project Management",
     text: "On-time delivery with complete transparency and efficient project management.",
-    image: "/images/service-management.jpg",
+    image: "https://i.pinimg.com/736x/8d/65/b8/8d65b8017d4a865da61e0a574eb228e9.jpg",
   },
 ];
 

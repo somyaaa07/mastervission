@@ -1,13 +1,45 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Calculator, Leaf, PencilRuler, Route, Sofa } from "lucide-react";
+import {
+  ArrowRight,
+  Calculator,
+  Leaf,
+  PencilRuler,
+  Route,
+  Sofa,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ITEMS = [
-  { icon: Sofa, title: "Interior Design & Fit-Out", image: "/images/addl-interior.jpg" },
-  { icon: PencilRuler, title: "Architecture & Planning", image: "/images/addl-architecture.jpg" },
-  { icon: Leaf, title: "Sustainable Construction", image: "/images/addl-sustainable.jpg" },
-  { icon: Route, title: "Infrastructure Development", image: "/images/addl-infrastructure.jpg" },
-  { icon: Calculator, title: "Cost Estimation & Consultancy", image: "/images/addl-estimation.jpg" },
+  {
+    icon: Sofa,
+    title: "Interior Design & Fit-Out",
+    image:
+      "https://i.pinimg.com/1200x/df/3c/dc/df3cdc6f13860983c817c58cedf3ea85.jpg",
+  },
+  {
+    icon: PencilRuler,
+    title: "Architecture & Planning",
+    image:
+      "https://i.pinimg.com/736x/41/bb/28/41bb2859332569f27b572c8401118a8d.jpg",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainable Construction",
+    image:
+      "https://i.pinimg.com/736x/42/c7/4c/42c74ca61e5558d4e93ef56a6837a663.jpg",
+  },
+  {
+    icon: Route,
+    title: "Infrastructure Development",
+    image:
+      "https://i.pinimg.com/736x/51/16/84/5116842481f2d177286c3c9e75f2e8bf.jpg",
+  },
+  {
+    icon: Calculator,
+    title: "Cost Estimation & Consultancy",
+    image:
+      "https://i.pinimg.com/1200x/bf/50/d3/bf50d3223ca900f44e95cfede6452555.jpg",
+  },
 ];
 
 export default function AdditionalServices() {
@@ -28,7 +60,8 @@ export default function AdditionalServices() {
             Complete Solutions Under One Roof
           </h2>
           <p className="font-body mt-3 max-w-[560px] text-[14.5px] leading-[1.7] text-[#003B8E]/70">
-            Beyond core construction, we provide allied services to ensure a seamless experience for our clients.
+            Beyond core construction, we provide allied services to ensure a
+            seamless experience for our clients.
           </p>
         </motion.div>
 
@@ -54,8 +87,15 @@ export default function AdditionalServices() {
                   />
                 </div>
                 <div className="flex items-center gap-3 px-4 py-4">
-                  <Icon size={30} strokeWidth={1.4} color="#003B8E" className="shrink-0" />
-                  <h3 className="font-body flex-1 text-[13.5px] font-bold leading-snug text-[#003B8E]">{title}</h3>
+                  <Icon
+                    size={30}
+                    strokeWidth={1.4}
+                    color="#003B8E"
+                    className="shrink-0"
+                  />
+                  <h3 className="font-body flex-1 text-[13.5px] font-bold leading-snug text-[#003B8E]">
+                    {title}
+                  </h3>
                   <ArrowRight
                     size={16}
                     color="#003B8E"

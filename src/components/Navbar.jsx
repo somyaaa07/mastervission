@@ -44,7 +44,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex shrink-0 items-center" aria-label="Mastervision Infra LLP – Home">
           <img
-            src="/images/logo.png"
+            src="/logo.png"
             alt="Mastervision Infra LLP"
             className="h-12 w-auto object-contain lg:h-[60px]"
           />

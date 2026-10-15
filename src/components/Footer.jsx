@@ -1,5 +1,17 @@
+
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  ArrowUpRight,
+  ArrowRight,
+  MapPin,
+  Mail,
+  Phone,
+  ArrowUp,
+} from "lucide-react";
 import { NAV_LINKS } from "../constants/site";
 
 const SOCIALS = [
@@ -10,49 +22,163 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#003B8E]">
-      <div className="mx-auto max-w-[1280px] px-5 pt-10 lg:px-8">
-        <div className="flex flex-col items-center gap-7 lg:flex-row lg:justify-between">
-          <Link to="/" aria-label="Mastervision Infra LLP – Home" className="rounded-md bg-[#FFFFFF] px-3 py-2">
-            <img src="/images/logo.png" alt="Mastervision Infra LLP" className="h-11 w-auto object-contain" />
-          </Link>
+    <footer className="relative overflow-hidden bg-[#003B8E] text-white">
+      {/* Decorative background */}
+      <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-[#003B8E]/30 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#FF8000]/10 blur-3xl" />
 
-          <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-            {NAV_LINKS.map((l) => (
-              <li key={l.href}>
-                <Link
-                  to={l.href}
-                  className="font-body text-[13px] font-medium text-[#FFFFFF]/90 transition-colors duration-200 hover:text-[#FF8000]"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8">
+       
 
-          <ul className="flex items-center gap-3">
-            {SOCIALS.map(({ icon: Icon, label, href }) => (
-              <li key={label}>
+        {/* Footer columns */}
+        <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-16">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <Link
+              to="/"
+              aria-label="MasterVision Infra LLP home"
+              className="inline-flex rounded-sm bg-white p-3"
+            >
+              <img
+                src="/footer-logo.png"
+                alt="MasterVision Infra LLP"
+                className="h-14 w-auto object-contain"
+              />
+            </Link>
+
+            <p className="mt-6 max-w-sm text-sm leading-7 text-white/65">
+              MasterVision Infra LLP is committed to building quality-driven
+              infrastructure through thoughtful planning, reliable execution,
+              and a vision for sustainable growth.
+            </p>
+
+            <div className="mt-6 flex items-center gap-3">
+              {SOCIALS.map(({ icon: Icon, label, href }) => (
                 <a
+                  key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFFFFF]/15 text-[#FFFFFF] transition-colors duration-200 hover:bg-[#FF8000]"
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
+                  className="flex h-10 w-10 items-center justify-center rounded-sm border border-white/15 text-white/75 transition-all duration-300 hover:border-[#FF8000] hover:bg-[#FF8000] hover:text-white"
                 >
-                  <Icon size={16} />
+                  <Icon size={17} />
                 </a>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick links */}
+          <div className="lg:col-span-2 lg:col-start-6">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider">
+              Quick Links
+            </h3>
+
+            <ul className="space-y-4">
+              {NAV_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="group inline-flex items-center gap-2 text-sm text-white/65 transition-colors duration-200 hover:text-[#FF8000]"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-[#FF8000] opacity-0 transition-opacity group-hover:opacity-100" />
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider">
+              What We Do
+            </h3>
+
+            <ul className="space-y-4 text-sm text-white/65">
+              <li>Infrastructure Development</li>
+              <li>Construction Solutions</li>
+              <li>Project Management</li>
+              <li>Engineering Services</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="lg:col-span-3">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider">
+              Get In Touch
+            </h3>
+
+            <div className="space-y-5">
+              <a
+                href="mailto:info@mastervisioninfra.com"
+                className="group flex items-start gap-3 text-sm text-white/65 transition-colors hover:text-[#FF8000]"
+              >
+                <Mail
+                  size={18}
+                  className="mt-0.5 shrink-0 text-[#FF8000]"
+                />
+                <span className="break-all">
+                  info@mastervisioninfra.com
+                </span>
+              </a>
+
+              <div className="flex items-start gap-3 text-sm text-white/65">
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-[#FF8000]"
+                />
+                <span>
+                  Contact us for our office address and project locations.
+                </span>
+              </div>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#FF8000] transition-colors hover:text-white"
+              >
+                Contact our team
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-[#FFFFFF]/20 py-5 sm:flex-row">
-          <p className="font-body text-[12px] text-[#FFFFFF]/80">
-            &copy; {new Date().getFullYear()} Mastervision Infra LLP. All Rights Reserved.
+        {/* Bottom bar */}
+        <div className="flex flex-col gap-4 border-t border-white/15 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs leading-6 text-white/50">
+            © {year} MasterVision Infra LLP. All rights reserved.
           </p>
-          <p className="font-body flex items-center gap-3 text-[12px] font-medium text-[#FFFFFF]/90">
-            Build <span className="h-3 w-px bg-[#FFFFFF]/40" /> Innovate <span className="h-3 w-px bg-[#FFFFFF]/40" /> Grow
-          </p>
+
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/50">
+            <Link
+              to="/privacy-policy"
+              className="transition-colors hover:text-white"
+            >
+              Privacy Policy
+            </Link>
+            <span className="h-3 w-px bg-white/20" />
+            <Link
+              to="/terms-and-conditions"
+              className="transition-colors hover:text-white"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            onClick={() =>
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }
+            aria-label="Scroll to top"
+            className="flex h-10 w-10 items-center justify-center self-start rounded-sm border border-white/20 transition-all hover:border-[#FF8000] hover:bg-[#FF8000] sm:self-auto"
+          >
+            <ArrowUp size={18} />
+          </button>
         </div>
       </div>
     </footer>

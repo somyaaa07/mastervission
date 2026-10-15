@@ -20,9 +20,10 @@ const CARDS = [
   {
     icon: MapPin,
     title: "Visit Our Office",
-    main: "Noida, Uttar Pradesh, India",
-    sub: "A-123, Sector 62, Noida - 201301",
+    main: "Greater Noida, Uttar Pradesh",
+    sub: `UGA-47, Galaxy Diamond Plaza, Haibatpur","Sector 4,- 201016`,
     href: "#location",
+    
   },
   {
     icon: FileText,

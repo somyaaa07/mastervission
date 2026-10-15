@@ -5,8 +5,8 @@ export const BRAND = {
   white: "#FFFFFF",
 };
 
-export const PHONE_DISPLAY = "+91 98765 43210";
-export const PHONE_HREF = "tel:+919876543210";
+export const PHONE_DISPLAY = "+91 7838117117";
+export const PHONE_HREF = "tel:+917838117117";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
