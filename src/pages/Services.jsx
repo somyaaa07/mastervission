@@ -18,7 +18,7 @@ export default function Services() {
       />
       <CtaBanner
         title="Turn Your Ideas Into Reality"
-        text="Get in touch with us today for a free consultation and let's create spaces that make a difference."
+        text="Get in touch with us today for a free consultation and let's build a home that makes a difference."
         image="/images/projects-cta.jpg"
       />
     </main>

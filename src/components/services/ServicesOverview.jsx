@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, ClipboardCheck, Factory, HardHat, Home } from "lucide-react";
+import { ArrowRight, ClipboardCheck, HardHat, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import SafeImage from "../ui/SafeImage";
 import SectionHeader from "../ui/SectionHeader";
@@ -12,23 +12,9 @@ const SERVICES = [
     fallback: "/images/project-duplex.jpg",
   },
   {
-    icon: Building2,
-    title: "Commercial Construction",
-    text: "Office spaces, retail outlets and commercial complexes that enhance your business.",
-    image: "https://i.pinimg.com/736x/1e/b6/f8/1eb6f8627bebd446b3918f8cd270519c.jpg",
-    fallback: "/images/project-commercial.jpg",
-  },
-  {
-    icon: Factory,
-    title: "Industrial Construction",
-    text: "Robust industrial infrastructure tailored for operational efficiency and safety.",
-    image: "https://i.pinimg.com/736x/19/de/90/19de9080e6e5a2babb800a592a4a16a5.jpg",
-    fallback: "/images/project-factory.jpg",
-  },
-  {
     icon: HardHat,
-    title: "Renovation & Remodeling",
-    text: "Transform existing spaces with modern designs and improved functionality.",
+    title: "Home Renovation & Remodeling",
+    text: "Transform your existing home with modern designs and improved functionality.",
     image: "https://i.pinimg.com/736x/f6/1f/d7/f61fd7ae53a369684804a7151381d8d7.jpg",
     fallback: "/images/project-renovation.jpg",
   },
@@ -47,18 +33,15 @@ export default function ServicesOverview() {
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
         <SectionHeader
           eyebrow="Our services"
-          title="End-to-end construction services"
-          text="A wide range of construction and infrastructure services designed for residential, commercial and industrial clients."
+          title="End-to-end home construction services"
+          text="A focused range of construction services designed for homeowners and residential clients."
         />
 
-        {/* 3 + 2 layout so the last two services get more room */}
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
-          {SERVICES.map(({ icon: Icon, title, text, image, fallback }, i) => (
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map(({ icon: Icon, title, text, image, fallback }) => (
             <article
               key={title}
-              className={`group flex flex-col overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#FFFFFF] transition-shadow duration-300 hover:shadow-[0_24px_48px_-28px_rgba(0,59,142,0.5)] ${
-                i < 3 ? "lg:col-span-2" : "lg:col-span-3"
-              }`}
+              className="group flex flex-col overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#FFFFFF] transition-shadow duration-300 hover:shadow-[0_24px_48px_-28px_rgba(0,59,142,0.5)]"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <SafeImage

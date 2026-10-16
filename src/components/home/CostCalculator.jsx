@@ -17,12 +17,6 @@ const PACKAGES = [
   { id: "premium", name: "Premium", rate: 2450, icon: Landmark },
 ];
 
-const PROJECT_TYPES = [
-  { id: "residential", label: "Residential", multiplier: 1 },
-  { id: "commercial", label: "Commercial", multiplier: 1.12 },
-  { id: "industrial", label: "Industrial", multiplier: 1.2 },
-];
-
 const ADDONS = [
   { id: "interior", label: "Interior Design", rate: 450 },
   { id: "landscape", label: "Landscaping", rate: 120 },
@@ -33,7 +27,6 @@ const ADDONS = [
 const formatINR = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
 
 export default function CostCalculator() {
-  const [type, setType] = useState("residential");
   const [pkg, setPkg] = useState("standard");
   const [area, setArea] = useState(1500);
   const [floors, setFloors] = useState(1);
@@ -44,17 +37,15 @@ export default function CostCalculator() {
 
   const result = useMemo(() => {
     const p = PACKAGES.find((x) => x.id === pkg);
-    const t = PROJECT_TYPES.find((x) => x.id === type);
     const totalArea = area * floors;
     const base = totalArea * p.rate;
-    const typeExtra = base * (t.multiplier - 1);
     const addonsCost = ADDONS.filter((a) => addons.includes(a.id)).reduce(
       (sum, a) => sum + a.rate * totalArea,
       0
     );
-    const total = base + typeExtra + addonsCost;
-    return { totalArea, base, typeExtra, addonsCost, total, low: total * 0.95, high: total * 1.08 };
-  }, [type, pkg, area, floors, addons]);
+    const total = base + addonsCost;
+    return { totalArea, base, addonsCost, total, low: total * 0.95, high: total * 1.08 };
+  }, [pkg, area, floors, addons]);
 
   const pct = ((area - 500) / (10000 - 500)) * 100;
 
@@ -75,10 +66,10 @@ export default function CostCalculator() {
             <span className="h-[2px] w-5 bg-[#FF8000]" />
           </p>
           <h2 className="font-heading mt-3 text-[34px] font-bold leading-[1.05] text-[#003B8E] sm:text-[44px] lg:text-[48px]">
-            Estimate Your Construction Cost
+            Estimate Your Home Construction Cost
           </h2>
           <p className="font-body mt-4 text-[15px] leading-[1.75] text-[#003B8E]/75">
-            Select your requirements and get an instant budget estimate for your project.
+            Select your requirements and get an instant budget estimate for your home.
           </p>
         </motion.div>
 
@@ -91,27 +82,8 @@ export default function CostCalculator() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="border border-[#003B8E]/15 bg-[#FFFFFF] px-6 py-8 sm:px-9 rounded-md"
           >
-            {/* Project type */}
-            <Label>Project Type</Label>
-            <div className="mt-3 grid grid-cols-3 gap-3">
-              {PROJECT_TYPES.map((t) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => setType(t.id)}
-                  className={`font-body px-3 py-3 text-[13px] font-bold transition-colors ${
-                    type === t.id
-                      ? "bg-[#003B8E] text-[#FFFFFF] rounded-md"
-                      : "border border-[#003B8E]/25 text-[#003B8E] hover:border-[#003B8E] rounded-md"
-                  }`}
-                >
-                  {t.label}
-                </button>
-              ))}
-            </div>
-
             {/* Package */}
-            <div className="mt-8">
+            <div>
               <Label>Package</Label>
               <div className="mt-3 grid gap-3 sm:grid-cols-3">
                 {PACKAGES.map(({ id, name, rate, icon: Icon }) => {
@@ -300,9 +272,6 @@ export default function CostCalculator() {
               <ul className="flex flex-col gap-3">
                 <Row label="Total built-up area" value={`${result.totalArea.toLocaleString("en-IN")} sq.ft`} icon />
                 <Row label="Base construction" value={formatINR(result.base)} />
-                {result.typeExtra > 0 && (
-                  <Row label="Project type surcharge" value={formatINR(result.typeExtra)} />
-                )}
                 {result.addonsCost > 0 && <Row label="Add-ons" value={formatINR(result.addonsCost)} />}
               </ul>
 

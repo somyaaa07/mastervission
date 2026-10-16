@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 
-const TYPES = ["Residential", "Commercial", "Industrial"];
+const TYPES = ["Villa", "Apartment", "Renovation"];
 const HIGHLIGHTS = ["Quality workmanship", "Timely delivery", "Transparent process"];
 const STATS = [
   { value: "150+", label: "Projects delivered" },
@@ -11,7 +11,7 @@ const STATS = [
 ];
 
 function QuoteBar({ onSubmit }) {
-  const [type, setType] = useState("Residential");
+  const [type, setType] = useState("Villa");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
@@ -127,11 +127,11 @@ export default function Hero({ onQuoteSubmit }) {
             {...enter(0.08)}
             className="font-heading mt-5 text-[38px] font-bold leading-[1.02] text-[#FFFFFF] sm:text-[50px] lg:text-[66px]"
           >
-            Homes, offices and factories built to last
+            Homes built to last
           </motion.h1>
 
           <motion.p {...enter(0.18)} className="font-body mt-6 max-w-[540px] text-[14px] leading-[1.7] text-[#FFFFFF]/90 sm:text-[14.5px]">
-            Mastervision Infra LLP delivers residential, commercial and industrial projects on schedule, with a clear
+            Mastervision Infra LLP builds villas, apartments and township homes on schedule, with a clear
             cost and progress update at every stage.
           </motion.p>
 

@@ -4,10 +4,7 @@ import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 
 const PROJECT_TYPES = [
   "Residential Construction",
-  "Commercial Construction",
-  "Industrial Construction",
   "Renovation & Remodeling",
-  "Infrastructure Development",
   "Project Management",
   "Other",
 ];

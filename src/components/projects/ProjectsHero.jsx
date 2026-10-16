@@ -9,9 +9,9 @@ export default function ProjectsHero() {
       imageAlt="Hard hat and blueprints on site with a city skyline at sunset"
       position="object-[72%_center]"
       crumb="Our projects"
-      title="Spaces that make a difference"
-      text="Explore our completed and ongoing projects across residential, commercial and industrial sectors, built with a commitment to quality, innovation and excellence."
-      facts={["Residential", "Commercial", "Industrial"]}
+      title="Homes that make a difference"
+      text="Explore our completed and ongoing residential projects, from villas and apartments to gated township homes, built with a commitment to quality, innovation and excellence."
+      facts={["Villas", "Apartments", "Townships"]}
       actions={
         <>
           <Link to="/contact" className={heroBtnPrimary}>

@@ -15,8 +15,8 @@ export default function WhoWeAre() {
         <div>
           <SectionHeader
             eyebrow="Who we are"
-            title="A trusted name in construction and infrastructure"
-            text="Mastervision Infra LLP specializes in residential, commercial and industrial projects. With years of experience, a skilled team and a customer-first approach, we deliver spaces that combine function, good design and long-term value."
+            title="A trusted name in residential construction"
+            text="Mastervision Infra LLP specializes in residential projects, from villas and apartments to township homes. With years of experience, a skilled team and a customer-first approach, we deliver homes that combine function, good design and long-term value."
           />
           <ul className="mt-9 grid gap-px overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#003B8E]/10 sm:grid-cols-2">
             {HIGHLIGHTS.map(({ icon: Icon, label, text }) => (
@@ -35,15 +35,15 @@ export default function WhoWeAre() {
 
         <div className="relative">
           <img
-            src="/images/about-building.jpg"
-            alt="Modern commercial building built by Mastervision Infra LLP"
+            src="/images/project-villa.jpg"
+            alt="Modern luxury villa built by Mastervision Infra LLP"
             loading="lazy"
             className="aspect-[4/3] w-full rounded-md object-cover"
           />
           <div className="absolute -bottom-5 left-5 right-5 flex items-center gap-4 rounded-md border-l-4 border-[#FF8000] bg-[#003B8E] px-6 py-4 shadow-[0_20px_40px_-20px_rgba(0,20,60,0.6)] sm:left-auto sm:right-6">
             <ShieldCheck size={30} strokeWidth={1.5} color="#FFFFFF" aria-hidden="true" />
             <p className="font-heading text-[19px] font-semibold leading-tight text-[#FFFFFF]">
-              Spaces that inspire
+              Homes that inspire
               <span className="font-body mt-0.5 block text-[13px] font-medium text-[#FFFFFF]/80">Communities that grow</span>
             </p>
           </div>

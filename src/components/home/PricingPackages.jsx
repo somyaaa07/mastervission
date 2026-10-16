@@ -21,7 +21,7 @@ const PACKAGES = [
   {
     icon: Building2,
     name: "Standard",
-    tagline: "Most chosen package for residential & commercial",
+    tagline: "Most chosen package for new homes",
     price: "₹1,950",
     unit: "/ sq.ft",
     featured: true,
@@ -206,10 +206,10 @@ export default function Pricing() {
           <span className="absolute left-0 top-0 h-full w-[4px] bg-[#FF8000]" />
           <div>
             <h4 className="font-heading text-[20px] font-bold text-[#FFFFFF]">
-              Need a custom plan for a large project?
+              Planning a large villa or multi-unit home?
             </h4>
             <p className="font-body mt-1 text-[14px] leading-[1.7] text-[#FFFFFF]/75">
-              Industrial, infrastructure or multi-unit builds — talk to our team for a tailored estimate.
+              Large villas, gated townships or multi-unit residential builds — talk to our team for a tailored estimate.
             </p>
           </div>
           <Link

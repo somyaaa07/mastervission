@@ -1,33 +1,25 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Building2, Factory, HardHat, Home, MapPin, Route, Search } from "lucide-react";
+import { ArrowRight, Building2, HardHat, Home, MapPin, Search, Trees } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeader from "../ui/SectionHeader";
 import SafeImage from "../ui/SafeImage";
 
 const CATEGORY_ICONS = {
-  Residential: Home,
-  Commercial: Building2,
-  Industrial: Factory,
+  "Independent Homes": Home,
+  Apartments: Building2,
+  Townships: Trees,
   Renovation: HardHat,
-  Infrastructure: Route,
 };
 
 const CATEGORIES = Object.keys(CATEGORY_ICONS);
 
 const PROJECTS = [
-  { title: "Luxury Residential Villa", category: "Residential", location: "Noida, Uttar Pradesh", image: "/images/project-villa.jpg" },
-  { title: "Corporate Office Complex", category: "Commercial", location: "Greater Noida, Uttar Pradesh", image: "/images/project-commercial.jpg" },
-  { title: "Industrial Warehouse", category: "Industrial", location: "Ghaziabad, Uttar Pradesh", image: "/images/project-warehouse.jpg" },
-  { title: "Premium Residential Apartments", category: "Residential", location: "Faridabad, Haryana", image: "/images/project-apartment.jpg" },
-  { title: "Retail & Commercial Space", category: "Commercial", location: "Noida, Uttar Pradesh", image: "/images/project-showroom.jpg" },
+  { title: "Luxury Residential Villa", category: "Independent Homes", location: "Noida, Uttar Pradesh", image: "/images/project-villa.jpg" },
+  { title: "Premium Residential Apartments", category: "Apartments", location: "Faridabad, Haryana", image: "/images/project-apartment.jpg" },
   { title: "Home Renovation Project", category: "Renovation", location: "Delhi, India", image: "/images/project-renovation.jpg" },
-  { title: "Infrastructure Development", category: "Infrastructure", location: "Yamuna Expressway", image: "/images/project-infrastructure.jpg" },
-  { title: "Manufacturing Facility", category: "Industrial", location: "Greater Noida, Uttar Pradesh", image: "/images/project-factory.jpg" },
-  { title: "Educational Institution", category: "Commercial", location: "Noida, Uttar Pradesh", image: "/images/project-education.jpg" },
-  { title: "Gated Township Homes", category: "Residential", location: "Greater Noida, Uttar Pradesh", image: "/images/project-township.jpg" },
-  { title: "Modern Duplex Residence", category: "Residential", location: "Ghaziabad, Uttar Pradesh", image: "/images/project-duplex.jpg" },
-  { title: "Office Interior Renovation", category: "Renovation", location: "Noida, Uttar Pradesh", image: "/images/project-office-reno.jpg" },
+  { title: "Gated Township Homes", category: "Townships", location: "Greater Noida, Uttar Pradesh", image: "/images/project-township.jpg" },
+  { title: "Modern Duplex Residence", category: "Independent Homes", location: "Ghaziabad, Uttar Pradesh", image: "/images/project-duplex.jpg" },
 ];
 
 export default function ProjectsGallery() {
@@ -56,8 +48,8 @@ export default function ProjectsGallery() {
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
         <SectionHeader
           eyebrow="Project portfolio"
-          title="Built across Delhi NCR"
-          text="Filter by type or search by name and location to see the work behind the numbers."
+          title="Homes built across Delhi NCR"
+          text="Filter by home type or search by name and location to see the work behind the numbers."
         />
 
         {/* Filters + search */}

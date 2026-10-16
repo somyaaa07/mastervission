@@ -9,7 +9,7 @@ export default function AboutHero() {
       image="/images/about-hero.jpg"
       crumb="About us"
       title="Building better futures"
-      text="At Mastervision Infra LLP, we turn ideas into spaces that perform and last. We focus on quality, innovation and keeping every client informed from first sketch to handover."
+      text="At Mastervision Infra LLP, we turn ideas into homes that perform and last. We focus on quality, innovation and keeping every client informed from first sketch to handover."
       facts={["Quality", "Innovation", "Client satisfaction"]}
       actions={
         <>

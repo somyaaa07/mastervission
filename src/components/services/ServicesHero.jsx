@@ -9,9 +9,9 @@ export default function ServicesHero() {
       imageAlt="Building under construction with cranes at sunset"
       position="object-[75%_center]"
       crumb="Services"
-      title="Comprehensive construction solutions"
-      text="From concept to completion, we deliver end-to-end construction and infrastructure solutions tailored to your needs. With quality, innovation and a client-first approach, we turn your vision into lasting spaces."
-      facts={["Residential", "Commercial", "Industrial"]}
+      title="Comprehensive home construction solutions"
+      text="From concept to completion, we deliver end-to-end home construction solutions tailored to your needs. With quality, innovation and a client-first approach, we turn your vision into a lasting home."
+      facts={["Villas", "Apartments", "Home renovation"]}
       actions={
         <>
           <Link to="/contact" className={heroBtnPrimary}>

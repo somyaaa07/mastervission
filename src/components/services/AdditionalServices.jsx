@@ -3,7 +3,6 @@ import {
   Calculator,
   Leaf,
   PencilRuler,
-  Route,
   Sofa,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -13,10 +12,10 @@ import SectionHeader from "../ui/SectionHeader";
 const ITEMS = [
   {
     icon: Sofa,
-    title: "Interior Design & Fit-Out",
+    title: "Home Interior Design",
     image:
       "https://i.pinimg.com/1200x/df/3c/dc/df3cdc6f13860983c817c58cedf3ea85.jpg",
-    fallback: "/images/project-office-reno.jpg",
+    fallback: "/images/project-renovation.jpg",
   },
   {
     icon: PencilRuler,
@@ -30,14 +29,7 @@ const ITEMS = [
     title: "Sustainable Construction",
     image:
       "https://i.pinimg.com/736x/42/c7/4c/42c74ca61e5558d4e93ef56a6837a663.jpg",
-    fallback: "/images/project-factory.jpg",
-  },
-  {
-    icon: Route,
-    title: "Infrastructure Development",
-    image:
-      "https://i.pinimg.com/736x/51/16/84/5116842481f2d177286c3c9e75f2e8bf.jpg",
-    fallback: "/images/project-infrastructure.jpg",
+    fallback: "/images/project-township.jpg",
   },
   {
     icon: Calculator,
@@ -54,11 +46,11 @@ export default function AdditionalServices() {
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
         <SectionHeader
           eyebrow="Additional services"
-          title="Complete solutions under one roof"
+          title="Complete home solutions under one roof"
           text="Beyond core construction, we provide allied services for a seamless experience from design to handover."
         />
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ icon: Icon, title, image, fallback }) => (
             <li key={title}>
               <Link
@@ -75,8 +67,8 @@ export default function AdditionalServices() {
                 <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#003B8E] via-[#003B8E]/40 to-transparent" />
                 <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
                   <span>
-                    <Icon size={26} strokeWidth={1.5} color="#FF8000" aria-hidden="true" />
-                    <span className="font-heading mt-2 block text-[23px] font-semibold leading-[1.1] text-[#FFFFFF]">{title}</span>
+                    <Icon size={20} strokeWidth={1.5} color="#FF8000" aria-hidden="true" />
+                    <span className="font-heading mt-2 block text-[18px] font-semibold leading-[1.1] text-[#FFFFFF]">{title}</span>
                   </span>
                   <ArrowRight size={18} color="#FFFFFF" aria-hidden="true" className="mb-1 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>

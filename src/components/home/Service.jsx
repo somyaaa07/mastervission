@@ -1,13 +1,11 @@
-import { ArrowRight, Building2, ClipboardCheck, Factory, HardHat, Home } from "lucide-react";
+import { ArrowRight, ClipboardCheck, HardHat, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import SafeImage from "../ui/SafeImage";
 import SectionHeader from "../ui/SectionHeader";
 
 const SERVICES = [
   { icon: Home, title: "Residential Construction", text: "Dream homes built with precision.", image: "/images/project-duplex.jpg" },
-  { icon: Building2, title: "Commercial Construction", text: "Spaces that power your business.", image: "/images/project-commercial.jpg" },
-  { icon: Factory, title: "Industrial Construction", text: "Strong foundations for bigger dreams.", image: "/images/project-factory.jpg" },
-  { icon: HardHat, title: "Renovation & Remodeling", text: "Modern upgrades for lasting value.", image: "/images/project-renovation.jpg" },
+  { icon: HardHat, title: "Home Renovation & Remodeling", text: "Modern upgrades for your home.", image: "/images/project-renovation.jpg" },
   { icon: ClipboardCheck, title: "Project Management", text: "On-time delivery with complete transparency.", image: "/images/contact-hero.jpg" },
 ];
 
@@ -17,8 +15,8 @@ export default function Services() {
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
         <SectionHeader
           eyebrow="Our services"
-          title="Comprehensive construction solutions"
-          text="From concept to completion, we provide end-to-end construction services tailored to your needs."
+          title="Comprehensive home construction solutions"
+          text="From concept to completion, we provide end-to-end home construction services tailored to your needs."
           action={
             <Link
               to="/services"
@@ -30,9 +28,9 @@ export default function Services() {
           }
         />
 
-        <ul className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-5">
+        <ul className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-5">
           {SERVICES.map(({ icon: Icon, title, text, image }, i) => (
-            <li key={title} className={i === 4 ? "col-span-2 lg:col-span-1" : ""}>
+            <li key={title} className={i === 2 ? "col-span-2 lg:col-span-1" : ""}>
               <Link
                 to="/services"
                 className="group relative block aspect-[3/4] overflow-hidden rounded-md bg-[#003B8E] max-lg:aspect-[4/5] max-lg:max-sm:aspect-[3/4]"

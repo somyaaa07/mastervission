@@ -8,8 +8,8 @@ const FAQS = [
     a: "Fill in the form on this page or call us. We will understand your requirements, arrange a free consultation and share a detailed quotation.",
   },
   {
-    q: "Do you handle both residential and commercial projects?",
-    a: "Yes. We build residential, commercial and industrial projects, and also take up renovation and infrastructure work.",
+    q: "What types of residential projects do you build?",
+    a: "Yes. We build villas, independent homes, apartments and gated township homes, and also take up home renovation and remodeling work.",
   },
   {
     q: "What areas do you serve?",

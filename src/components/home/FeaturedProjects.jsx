@@ -5,8 +5,8 @@ import SafeImage from "../ui/SafeImage";
 
 const PROJECTS = [
   { title: "Luxury Residential Villa", type: "Residential", location: "Noida", image: "https://i.pinimg.com/1200x/a7/41/98/a7419857c29c61077ddc9afa5bda5c7f.jpg" },
-  { title: "Commercial Complex", type: "Commercial", location: "Greater Noida", image: "/images/project-commercial.jpg" },
-  { title: "Industrial Warehouse", type: "Industrial", location: "Ghaziabad", image: "/images/project-warehouse.jpg" },
+  { title: "Gated Township Homes", type: "Township", location: "Greater Noida", image: "/images/project-township.jpg" },
+  { title: "Modern Duplex Residence", type: "Residential", location: "Ghaziabad", image: "/images/project-duplex.jpg" },
   { title: "Residential Apartment", type: "Residential", location: "Faridabad", image: "/images/project-apartment.jpg" },
 ];
 

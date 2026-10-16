@@ -18,7 +18,7 @@ export default function ContactPromise() {
       />
 
       <h2 className="font-heading max-w-[340px] border-l-4 border-[#FF8000] pl-4 text-[32px] font-bold leading-[1.1] text-[#FFFFFF] sm:text-[38px]">
-        Let&apos;s create spaces for a brighter tomorrow
+        Let&apos;s build a home for a brighter tomorrow
       </h2>
 
       <div className="mt-10 flex items-start gap-4 rounded-md border border-[#FFFFFF]/25 bg-[#003B8E]/85 p-5 backdrop-blur-sm sm:max-w-[420px]">

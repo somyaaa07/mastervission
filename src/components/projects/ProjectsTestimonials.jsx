@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     quote:
       "Mastervision Infra LLP delivered our project on time with exceptional quality. Their professionalism and attention to detail are truly commendable.",
     name: "Ramesh Kumar",
-    role: "Business Owner",
+    role: "Homeowner",
     image: "/images/client-1.jpg",
   },
   {
@@ -21,16 +21,16 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "From planning to handover, every promise was kept on budget and on schedule. A dependable partner for large projects.",
+      "From planning to handover, every promise was kept on budget and on schedule. A dependable partner for building our home.",
     name: "Amit Sharma",
-    role: "Director, Ghaziabad",
+    role: "Homeowner, Ghaziabad",
     image: "/images/client-amit.jpg",
   },
   {
     quote:
       "Transparent costs and neat site management made the whole process stress-free. Our apartment exceeded expectations.",
     name: "Priya Singh",
-    role: "Developer, Faridabad",
+    role: "Homeowner, Faridabad",
     image: "/images/client-priya.jpg",
   },
 ];

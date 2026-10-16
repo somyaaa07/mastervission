@@ -24,7 +24,7 @@ const FAQS = [
   {
     category: "Process",
     q: "How long does a typical project take?",
-    a: "A standard residential project takes around 8 to 12 months, while larger commercial or industrial builds depend on scope. You receive a detailed timeline at the start and regular progress updates throughout.",
+    a: "A standard residential project takes around 8 to 12 months, while larger villas and multi-unit residential builds depend on scope. You receive a detailed timeline at the start and regular progress updates throughout.",
   },
   {
     category: "Process",

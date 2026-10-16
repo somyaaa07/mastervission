@@ -27,16 +27,16 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Our warehouse was ready ahead of schedule with clear updates at every stage. A reliable construction partner.",
+      "Our home was ready ahead of schedule with clear updates at every stage. A reliable construction partner.",
     name: "Amit Verma",
-    role: "Director, Ghaziabad",
+    role: "Homeowner, Ghaziabad",
     image: "/images/client-3.jpg",
   },
   {
     quote:
       "Transparent costs and neat site management made the whole process stress-free. Highly recommended.",
     name: "Priya Singh",
-    role: "Developer, Faridabad",
+    role: "Homeowner, Faridabad",
     image: "/images/client-4.jpg",
   },
 ];

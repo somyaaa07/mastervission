@@ -48,7 +48,7 @@ export default function Footer() {
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/80">
               MasterVision Infra LLP is committed to building quality-driven
-              infrastructure through thoughtful planning, reliable execution,
+              homes through thoughtful planning, reliable execution,
               and a vision for sustainable growth.
             </p>
 
@@ -96,10 +96,10 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-4 text-sm text-white/80">
-              <li>Infrastructure Development</li>
-              <li>Construction Solutions</li>
+              <li>Residential Construction</li>
+              <li>Home Renovation</li>
               <li>Project Management</li>
-              <li>Engineering Services</li>
+              <li>Architecture &amp; Planning</li>
             </ul>
           </div>
 

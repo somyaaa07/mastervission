@@ -26,15 +26,15 @@ export default function Specialization() {
           <p className="font-heading absolute bottom-6 left-5 border-l-4 border-[#FF8000] pl-4 text-[28px] font-semibold leading-tight text-[#FFFFFF] sm:bottom-8 sm:left-8 sm:text-[34px]">
             Delivering
             <br />
-            quality spaces
+            quality homes
           </p>
         </div>
 
         <div className="flex flex-col justify-center px-5 py-14 lg:px-16 lg:py-20">
           <SectionHeader
             eyebrow="Our specialization"
-            title="Spaces that inspire, communities that grow"
-            text="We combine modern techniques, advanced technology and a skilled team to deliver spaces that are functional and ready for the future."
+            title="Homes that inspire, communities that grow"
+            text="We combine modern techniques, advanced technology and a skilled team to deliver homes that are functional and ready for the future."
           />
 
           <ul className="mt-7 divide-y divide-[#003B8E]/10 border-y border-[#003B8E]/10">
