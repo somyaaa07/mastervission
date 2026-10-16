@@ -11,8 +11,9 @@ import Contact from "./pages/Contact";
 export default function App() {
   return (
     <>
-      <ScrollToTop />
+      
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Minus, Phone, Plus } from "lucide-react";
+import { Link } from "react-router-dom";
+import { PHONE_HREF } from "../../constants/site";
 
 // Edit questions/answers with your real details
 const FAQS = [
@@ -71,11 +73,11 @@ export default function HomeFAQ() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:sticky lg:top-24 lg:self-start"
           >
-            <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-              <span className="h-[2px] w-5 bg-[#FF8000]" />
+            <p className="font-body flex items-center gap-3 text-[13px] font-semibold text-[#FF8000]">
+              <span aria-hidden="true" className="h-[3px] w-8 bg-[#FF8000]" />
               FAQs
             </p>
-            <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[34px]">
+            <h2 className="font-heading mt-3 text-[34px] font-bold leading-[1.05] text-[#003B8E] sm:text-[44px] lg:text-[48px]">
               Frequently Asked Questions
             </h2>
             <p className="font-body mt-4 max-w-[460px] text-[15px] leading-[1.75] text-[#003B8E]/75">
@@ -84,7 +86,7 @@ export default function HomeFAQ() {
             </p>
 
             {/* Help card */}
-            <div className="relative mt-8 overflow-hidden bg-[#003B8E] px-7 py-8 rounded-xl">
+            <div className="relative mt-8 overflow-hidden bg-[#003B8E] px-7 py-8 rounded-md">
               <div
                 className="absolute right-0 top-0 h-[70px] w-[110px] bg-[#FF8000] "
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%)" }}
@@ -94,15 +96,14 @@ export default function HomeFAQ() {
               </span>
               <h3 className="font-heading mt-5 text-[22px] font-bold leading-tight text-[#FFFFFF]">
                 Still have questions?
-                <span className="ml-2 inline-block h-5 w-[3px] -skew-x-12 bg-[#FF8000] align-middle" />
               </h3>
               <p className="font-body mt-2 text-[14px] leading-[1.7] text-[#FFFFFF]/75">
                 Talk to our experts for a free consultation and site visit.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <a
-                  href="#contact"
-                  className="font-body group inline-flex items-center justify-center gap-2 bg-[#FF8000] px-6 py-3.5 text-[13px] font-bold tracking-[0.04em] text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF] hover:text-[#003B8E]"
+                <Link
+                  to="/contact"
+                  className="font-body group inline-flex items-center justify-center gap-2 bg-[#FF8000] px-6 py-3.5 text-[14.5px] font-semibold text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF] hover:text-[#003B8E]"
                 >
                   Contact Us
                   <ArrowRight
@@ -110,10 +111,10 @@ export default function HomeFAQ() {
                     strokeWidth={2}
                     className="transition-transform group-hover:translate-x-1"
                   />
-                </a>
+                </Link>
                 <a
-                  href="tel:+910000000000"
-                  className="font-body inline-flex items-center justify-center gap-2 border border-[#FFFFFF]/35 px-6 py-3.5 text-[13px] font-bold tracking-[0.04em] text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF]/10"
+                  href={PHONE_HREF}
+                  className="font-body inline-flex items-center justify-center gap-2 border border-[#FFFFFF]/35 px-6 py-3.5 text-[14.5px] font-semibold text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF]/10"
                 >
                   <Phone size={16} strokeWidth={2} />
                   Call Now
@@ -139,8 +140,8 @@ export default function HomeFAQ() {
                   onClick={() => changeCategory(c)}
                   className={`font-body px-5 py-2.5 text-[13px] font-bold transition-colors ${
                     category === c
-                      ? "bg-[#003B8E] text-[#FFFFFF] rounded-xl"
-                      : "border border-[#003B8E]/25 text-[#003B8E] hover:border-[#003B8E] rounded-xl"
+                      ? "bg-[#003B8E] text-[#FFFFFF] rounded-md"
+                      : "border border-[#003B8E]/25 text-[#003B8E] hover:border-[#003B8E] rounded-md"
                   }`}
                 >
                   {c}
@@ -161,8 +162,8 @@ export default function HomeFAQ() {
                     transition={{ duration: 0.45, delay: i * 0.05, ease: "easeOut" }}
                     className={`relative overflow-hidden border transition-colors ${
                       open
-                        ? "border-[#003B8E] bg-[#003B8E]/[0.04] rounded-xl"
-                        : "border-[#003B8E]/15 bg-[#FFFFFF] hover:border-[#003B8E]/40 rounded-xl"
+                        ? "border-[#003B8E] bg-[#003B8E]/[0.04] rounded-md"
+                        : "border-[#003B8E]/15 bg-[#FFFFFF] hover:border-[#003B8E]/40 rounded-md"
                     }`}
                   >
                     <span

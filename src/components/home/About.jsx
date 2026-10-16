@@ -1,79 +1,62 @@
+import { ArrowRight, Clock, FileCheck, ShieldCheck, Smile } from "lucide-react";
+import { Link } from "react-router-dom";
+import SectionHeader from "../ui/SectionHeader";
 import { motion } from "framer-motion";
-import { Clock, FileCheck, ShieldCheck, Smile } from "lucide-react";
 
 const FEATURES = [
-  { icon: ShieldCheck, label: "Quality Workmanship" },
-  { icon: Clock, label: "Timely Delivery" },
-  { icon: FileCheck, label: "Transparent Process" },
-  { icon: Smile, label: "Client Satisfaction" },
+  { icon: ShieldCheck, label: "Quality workmanship" },
+  { icon: Clock, label: "Timely delivery" },
+  { icon: FileCheck, label: "Transparent process" },
+  { icon: Smile, label: "Client satisfaction" },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#FFFFFF]">
-      <div className="grid lg:grid-cols-[44%_1fr]">
-        {/* Image with diagonal tag */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+    <section id="about" className="bg-[#F5F8FD]">
+      <div className="grid lg:grid-cols-[1.05fr_1fr]">
+           <motion.div
+              whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative min-h-[280px] overflow-hidden sm:min-h-[340px] lg:min-h-[420px]"
-        >
-          <img
-            src="/images/about-site.png
-            "
-            alt="Construction cranes at sunset on a Mastervision project site"
-            className="absolute inset-0 h-full w-full object-cover"
+          className="relative min-h-[280px] lg:min-h-[420px]">
+          {/* <div className="absolute -bottom-4 -right-4 h-full w-full rounded-[28px] bg-[#FF8000] sm:-bottom-5 sm:-right-5" aria-hidden="true" /> */}
+         <video
+            src="/about-story.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 h-full w-full object-cover "
           />
-          <div
-            className="absolute bottom-0 left-0 flex h-[42%] w-[72%] items-center bg-[#003B8E] pl-6 pr-16 sm:pl-10"
-            style={{ clipPath: "polygon(0 22%, 100% 100%, 0 100%)" }}
-          >
-            <p className="font-heading mt-10 text-[22px] font-semibold italic leading-tight text-[#FFFFFF] sm:text-[26px]">
-              Building
-              <br />
-              Better Futures
-              <span className="ml-2 inline-block h-6 w-[3px] -skew-x-12 bg-[#FF8000] align-middle" />
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col justify-center px-5 py-12 lg:px-16 lg:py-14"
-        >
-          <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
-            About Us
-          </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[34px]">
-            Welcome to Mastervision Infra LLP
-          </h2>
-          <p className="font-body mt-4 max-w-[520px] text-[15px] leading-[1.75] text-[#003B8E]/75">
-            We are a team of experienced professionals dedicated to delivering quality construction solutions
-            for a better tomorrow. With a focus on innovation, sustainability and client satisfaction, we bring
-            your ideas to life — on time and within budget.
-          </p>
+        <div className="flex flex-col justify-center px-5 py-14 lg:px-16 lg:py-20">
+          <SectionHeader
+            eyebrow="About us"
+            title="Welcome to Mastervision Infra LLP"
+            text="We are a team of experienced professionals dedicated to delivering quality construction solutions for a better tomorrow. With a focus on innovation, sustainability and client satisfaction, we bring your ideas to life, on time and within budget."
+          />
 
-          <ul className="mt-8 grid grid-cols-2 gap-y-6 sm:grid-cols-4">
-            {FEATURES.map(({ icon: Icon, label }, i) => (
-              <li
-                key={label}
-                className={`flex items-center gap-3 sm:px-3 ${i > 0 ? "sm:border-l sm:border-[#003B8E]/15" : "sm:pl-0"}`}
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#003B8E]/25">
-                  <Icon size={20} strokeWidth={1.6} color="#003B8E" />
+          <ul className="mt-8 grid gap-px overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#003B8E]/10 sm:grid-cols-2">
+            {FEATURES.map(({ icon: Icon, label }) => (
+              <li key={label} className="flex items-center gap-3 bg-[#FFFFFF] p-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#003B8E]">
+                  <Icon size={19} strokeWidth={1.6} color="#FFFFFF" aria-hidden="true" />
                 </span>
-                <span className="font-body text-[12.5px] font-semibold leading-snug text-[#003B8E]">{label}</span>
+                <span className="font-heading text-[19px] font-semibold leading-tight text-[#003B8E]">{label}</span>
               </li>
             ))}
           </ul>
-        </motion.div>
+
+          <Link
+            to="/about"
+            className="font-body mt-8 inline-flex w-fit items-center gap-2 border-b-2 border-[#FF8000] pb-0.5 text-[15px] font-semibold text-[#003B8E] transition-colors hover:text-[#FF8000]"
+          >
+            More about our company
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </section>
   );

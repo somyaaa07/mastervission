@@ -6,7 +6,7 @@ import OurStory from "../components/about/OurStory";
 import WorkProcess from "../components/about/WorkProcess";
 import LeadershipTeam from "../components/about/LeadershipTeam";
 import ClientTestimonials from "../components/about/ClientTestimonials";
-// import CtaBanner from "../components/home/CtaBanner";
+import CtaBanner from "../components/home/CtaBanner";
 
 export default function About() {
   return (
@@ -17,9 +17,10 @@ export default function About() {
       <MissionVisionValues />
       <OurStory />
       <WorkProcess />
-      <LeadershipTeam />
+      {/* <LeadershipTeam /> */}
+       <CtaBanner />
       <ClientTestimonials />
-      {/* <CtaBanner /> */}
+     
     </main>
   );
 }

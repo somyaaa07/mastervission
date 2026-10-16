@@ -36,19 +36,19 @@ export default function FaqAccordion() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-          <span className="h-[2px] w-5 bg-[#FF8000]" />
-          Frequently Asked Questions
+        <p className="font-body flex items-center gap-3 text-[13px] font-semibold text-[#FF8000]">
+          <span aria-hidden="true" className="h-[3px] w-8 bg-[#FF8000]" />
+          Frequently asked questions
         </p>
-        <h2 className="font-heading mt-3 text-[28px] font-bold leading-[1.15] text-[#003B8E] sm:text-[32px]">
-          Quick Answers
+        <h2 className="font-heading mt-3 text-[34px] font-bold leading-[1.05] text-[#003B8E] sm:text-[40px]">
+          Quick answers
         </h2>
-        <p className="font-body mt-2 text-[14.5px] leading-[1.7] text-[#003B8E]/70">
+        <p className="font-body mt-3 text-[15.5px] leading-[1.7] text-[#003B8E]/75">
           Find answers to some common questions.
         </p>
       </motion.div>
 
-      <ul className="mt-6 divide-y divide-[#003B8E]/10 rounded-lg border border-[#003B8E]/10 bg-[#FFFFFF]">
+      <ul className="mt-6 divide-y divide-[#003B8E]/10 rounded-md border border-[#003B8E]/12 bg-[#FFFFFF]">
         {FAQS.map((item, i) => {
           const isOpen = open === i;
           return (
@@ -60,13 +60,13 @@ export default function FaqAccordion() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${i}`}
                   id={`faq-button-${i}`}
-                  className="font-body flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-[13.5px] font-semibold text-[#003B8E] transition-colors hover:text-[#FF8000]"
+                  className="font-body flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-[15.5px] font-semibold text-[#003B8E] transition-colors hover:text-[#FF8000]"
                 >
                   {item.q}
                   {isOpen ? (
-                    <Minus size={16} className="shrink-0" />
+                    <Minus size={18} aria-hidden="true" className="shrink-0 text-[#FF8000]" />
                   ) : (
-                    <Plus size={16} className="shrink-0" />
+                    <Plus size={18} aria-hidden="true" className="shrink-0 text-[#FF8000]" />
                   )}
                 </button>
               </h3>
@@ -82,7 +82,7 @@ export default function FaqAccordion() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="font-body px-5 pb-4 text-[13px] leading-[1.7] text-[#003B8E]/75">
+                    <p className="font-body px-5 pb-5 text-[14.5px] leading-[1.7] text-[#003B8E]/75">
                       {item.a}
                     </p>
                   </motion.div>

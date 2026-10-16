@@ -1,9 +1,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
-
-const PHONE_DISPLAY = "+91 7838117117";
-const PHONE_HREF = "tel:+917838117117";
+import { PHONE_DISPLAY, PHONE_HREF } from "../../constants/site";
 
 const ADDRESS_LINES = [
   "UGA-47, Galaxy Diamond Plaza, Haibatpur",
@@ -21,13 +19,13 @@ export default function LocationMap() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-      className="flex flex-col rounded-lg bg-[#003B8E] p-6 sm:p-7"
+      className="flex flex-col rounded-md border-t-4 border-[#FF8000] bg-[#003B8E] p-6 sm:p-9"
     >
-      <h2 className="font-heading text-[28px] font-bold leading-[1.15] text-white sm:text-[32px]">
-        Our Location
+      <h2 className="font-heading text-[32px] font-bold leading-[1.1] text-white sm:text-[38px]">
+        Our location
       </h2>
 
-      <p className="font-body mt-2 text-[14px] leading-[1.7] text-white/80">
+      <p className="font-body mt-2 text-[15px] leading-[1.7] text-white/85">
         Visit our office or find us on the map below.
       </p>
 
@@ -56,11 +54,11 @@ export default function LocationMap() {
           />
 
           <div>
-            <p className="font-body text-[14px] font-bold text-white">
-              Office Address
+            <p className="font-body text-[15px] font-bold text-white">
+              Office address
             </p>
 
-            <p className="font-body mt-1 text-[13.5px] leading-[1.7] text-white/90">
+            <p className="font-body mt-1 text-[14.5px] leading-[1.7] text-white/90">
               {ADDRESS_LINES[0]}
               <br />
               {ADDRESS_LINES[1]}
@@ -77,7 +75,7 @@ export default function LocationMap() {
 
           <span>
             <span className="block text-[14px] font-bold">
-              Contact Number
+              Contact number
             </span>
             <span className="mt-1 block text-[13.5px] text-white/90">
               {PHONE_DISPLAY}
@@ -92,10 +90,10 @@ export default function LocationMap() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-body inline-flex w-fit items-center gap-2 rounded-md border border-white/80 px-5 py-3 text-[13.5px] font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-[#003B8E]"
+          className="font-body inline-flex w-fit items-center gap-2 rounded-md border border-white/80 px-5 py-3 text-[14.5px] font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-[#003B8E]"
         >
-          Get Directions
-          <ArrowRight size={16} />
+          Get directions
+          <ArrowRight size={16} aria-hidden="true" />
         </a>
       </div>
     </motion.div>

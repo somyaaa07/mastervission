@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Home, Building2, Landmark } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PACKAGES = [
   {
@@ -63,12 +64,12 @@ export default function Pricing() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto max-w-[620px] text-center"
         >
-          <p className="font-body flex items-center justify-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
+          <p className="font-body flex items-center justify-center gap-3 text-[13px] font-semibold text-[#FF8000]">
+            <span aria-hidden="true" className="h-[3px] w-8 bg-[#FF8000]" />
             Our Packages
             <span className="h-[2px] w-5 bg-[#FF8000]" />
           </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#FFFFFF] sm:text-[34px]">
+          <h2 className="font-heading mt-3 text-[34px] font-bold leading-[1.05] text-[#FFFFFF] sm:text-[44px] lg:text-[48px]">
             Transparent Pricing for Every Project
           </h2>
           <p className="font-body mt-4 text-[15px] leading-[1.75] text-[#FFFFFF]/75">
@@ -88,8 +89,8 @@ export default function Pricing() {
               transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
               className={`relative flex flex-col overflow-hidden border ${
                 featured
-                  ? "border-[#FF8000] bg-[#002A66] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.55)] lg:-my-4 rounded-xl"
-                  : "border-[#FFFFFF]/20 bg-[#FFFFFF] rounded-xl"
+                  ? "border-[#FF8000] bg-[#002A66] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.55)] lg:-my-4 rounded-md"
+                  : "border-[#FFFFFF]/20 bg-[#FFFFFF] rounded-md"
               }`}
             >
               {/* Diagonal tag */}
@@ -98,7 +99,7 @@ export default function Pricing() {
                   className="absolute right-0 top-0 flex h-[70px] w-[130px] items-start justify-end bg-[#FF8000] pr-3 pt-2"
                   style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%)" }}
                 >
-                  <span className="font-body text-[10px] font-bold uppercase tracking-[0.08em] text-[#FFFFFF]">
+                  <span className="font-body text-[11.5px] font-semibold text-[#FFFFFF]">
                     Popular
                   </span>
                 </div>
@@ -138,12 +139,11 @@ export default function Pricing() {
                   </span>
                   <span
                     className={`font-body pb-1 text-[13px] font-semibold ${
-                      featured ? "text-[#FFFFFF]/70" : "text-[#003B8E]/60"
+                      featured ? "text-[#FFFFFF]/70" : "text-[#003B8E]/70"
                     }`}
                   >
                     {unit}
                   </span>
-                  <span className="mb-2 ml-2 inline-block h-5 w-[3px] -skew-x-12 bg-[#FF8000]" />
                 </div>
 
                 <div
@@ -175,9 +175,9 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <a
-                  href="#contact"
-                  className={`font-body group mt-8 inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[13px] font-bold tracking-[0.04em] transition-colors rounded-xl ${
+                <Link
+                  to="/contact"
+                  className={`font-body group mt-8 inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[13px] font-semibold transition-colors rounded-md ${
                     featured
                       ? "bg-[#FF8000] text-[#FFFFFF] hover:bg-[#FFFFFF] hover:text-[#003B8E]"
                       : "border border-[#003B8E] text-[#003B8E] hover:bg-[#003B8E] hover:text-[#FFFFFF]"
@@ -189,7 +189,7 @@ export default function Pricing() {
                     strokeWidth={2}
                     className="transition-transform group-hover:translate-x-1"
                   />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -212,16 +212,16 @@ export default function Pricing() {
               Industrial, infrastructure or multi-unit builds — talk to our team for a tailored estimate.
             </p>
           </div>
-          <a
-            href="#contact"
-            className="font-body inline-flex shrink-0 items-center gap-2 bg-[#FF8000] px-6 py-3.5 text-[13px] font-bold tracking-[0.04em] text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF] hover:text-[#003B8E] rounded-xl"
+          <Link
+            to="/contact"
+            className="font-body inline-flex shrink-0 items-center gap-2 bg-[#FF8000] px-6 py-3.5 text-[14.5px] font-semibold text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF] hover:text-[#003B8E] rounded-md"
           >
             Talk to Our Team
             <ArrowRight size={16} strokeWidth={2} />
-          </a>
+          </Link>
         </motion.div>
 
-        <p className="font-body mx-auto mt-6 max-w-[1120px] text-center text-[12px] text-[#FFFFFF]/60">
+        <p className="font-body mx-auto mt-6 max-w-[1120px] text-center text-[12px] text-[#FFFFFF]/80">
           * Prices are indicative and may vary based on location, design and material selection.
         </p>
       </div>

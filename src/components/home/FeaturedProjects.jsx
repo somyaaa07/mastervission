@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import SafeImage from "../ui/SafeImage";
 
 const PROJECTS = [
   { title: "Luxury Residential Villa", type: "Residential", location: "Noida", image: "https://i.pinimg.com/1200x/a7/41/98/a7419857c29c61077ddc9afa5bda5c7f.jpg" },
@@ -31,29 +33,29 @@ export default function FeaturedProjects() {
               A glimpse of our completed and ongoing projects that showcase our commitment to quality and excellence.
             </p>
           </div>
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="font-body inline-flex w-fit items-center gap-2 rounded-md border border-[#FFFFFF]/80 px-5 py-3 text-[14px] font-semibold text-[#FFFFFF] transition-colors duration-200 hover:bg-[#FFFFFF] hover:text-[#003B8E]"
           >
             View All Projects
-            <ArrowRight size={16} />
-          </a>
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </motion.div>
 
         <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PROJECTS.map((p, i) => (
-            <motion.a
+            <motion.div
               key={p.title}
-              href="#projects"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-              className="group block overflow-hidden rounded-md bg-[#FFFFFF]/[0.08]"
+              className="group relative overflow-hidden rounded-md bg-[#FFFFFF]/[0.08]"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img
+                <SafeImage
                   src={p.image}
+                  fallback="/images/project-villa.jpg"
                   alt={p.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -61,7 +63,9 @@ export default function FeaturedProjects() {
               </div>
               <div className="flex items-center justify-between gap-3 px-4 py-4">
                 <div>
-                  <h3 className="font-body text-[14px] font-bold text-[#FFFFFF]">{p.title}</h3>
+                  <h3 className="font-heading text-[19px] font-semibold leading-tight text-[#FFFFFF]">
+                    <Link to="/projects" className="after:absolute after:inset-0">{p.title}</Link>
+                  </h3>
                   <p className="font-body mt-1 flex items-center gap-2 text-[12px] text-[#FFFFFF]/75">
                     {p.type}
                     <span className="h-3 w-px bg-[#FFFFFF]/40" />
@@ -74,7 +78,7 @@ export default function FeaturedProjects() {
                   className="shrink-0 transition-all duration-300 group-hover:translate-x-1 group-hover:stroke-[#FF8000]"
                 />
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

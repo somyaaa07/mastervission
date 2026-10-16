@@ -1,35 +1,96 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   Design tokens
+   Brand colours are unchanged: #003B8E (blue), #FF8000 (orange),
+   #F04B00 (deep orange), #FFFFFF (white).
+   Typography: Roboto Condensed for headings, Inter for UI and body.
+------------------------------------------------------------------- */
+@theme {
+  --font-heading: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
-
-
+  --color-brand-blue: #003B8E;
+  --color-brand-orange: #FF8000;
+  --color-brand-deep-orange: #F04B00;
+}
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-family: var(--font-body);
   color: #003B8E;
   background: #FFFFFF;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-.font-heading {
-  font-family: "Playfair Display", Georgia, serif;
-  letter-spacing: -0.01em;
+/* Headings: condensed, architectural, slightly tightened */
+.font-heading,
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+h1,
+h2 {
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+h3 {
+  letter-spacing: 0;
 }
 
 .font-body {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-family: var(--font-body);
+}
+
+p {
+  text-wrap: pretty;
 }
 
 section[id] {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 84px;
+}
+
+/* Keyboard focus that is visible on both light and dark surfaces */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid #FF8000;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: #FF8000;
+  color: #FFFFFF;
+}
+
+/* Hero image slow settle: a single page-load moment */
+@keyframes hero-settle {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
+.hero-settle {
+  animation: hero-settle 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

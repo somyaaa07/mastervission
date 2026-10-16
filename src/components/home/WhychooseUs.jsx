@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Building2, ShieldCheck, Star, Users } from "lucide-react";
+import Avatar from "../ui/Avatar";
 
 const STATS = [
   { icon: Building2, value: "50+", label: "Projects Completed" },
@@ -110,9 +111,9 @@ export default function WhyChooseUs() {
                 transition={{ duration: 0.35 }}
                 className="flex items-start gap-4 sm:items-center"
               >
-                <img
+                <Avatar
                   src={t.image}
-                  alt={t.name}
+                  name={t.name}
                   className="h-14 w-14 shrink-0 rounded-full border-2 border-[#FFFFFF] object-cover shadow-md"
                 />
                 <div>

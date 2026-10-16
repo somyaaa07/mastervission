@@ -25,10 +25,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-[#003B8E] text-white">
-      {/* Decorative background */}
-      <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-[#003B8E]/30 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#FF8000]/10 blur-3xl" />
+    <footer className="relative overflow-hidden border-t-4 border-[#FF8000] bg-[#003B8E] font-body text-white">
 
       <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8">
        
@@ -40,7 +37,7 @@ export default function Footer() {
             <Link
               to="/"
               aria-label="MasterVision Infra LLP home"
-              className="inline-flex rounded-sm bg-white p-3"
+              className="inline-flex rounded-md bg-white p-3"
             >
               <img
                 src="/footer-logo.png"
@@ -49,7 +46,7 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-white/65">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-white/80">
               MasterVision Infra LLP is committed to building quality-driven
               infrastructure through thoughtful planning, reliable execution,
               and a vision for sustainable growth.
@@ -63,7 +60,7 @@ export default function Footer() {
                   aria-label={label}
                   target={href !== "#" ? "_blank" : undefined}
                   rel={href !== "#" ? "noopener noreferrer" : undefined}
-                  className="flex h-10 w-10 items-center justify-center rounded-sm border border-white/15 text-white/75 transition-all duration-300 hover:border-[#FF8000] hover:bg-[#FF8000] hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white/75 transition-all duration-300 hover:border-[#FF8000] hover:bg-[#FF8000] hover:text-white"
                 >
                   <Icon size={17} />
                 </a>
@@ -73,8 +70,8 @@ export default function Footer() {
 
           {/* Quick links */}
           <div className="lg:col-span-2 lg:col-start-6">
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider">
-              Quick Links
+            <h3 className="font-heading mb-6 text-[19px] font-semibold tracking-wide">
+              Quick links
             </h3>
 
             <ul className="space-y-4">
@@ -82,7 +79,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className="group inline-flex items-center gap-2 text-sm text-white/65 transition-colors duration-200 hover:text-[#FF8000]"
+                    className="group inline-flex items-center gap-2 text-sm text-white/80 transition-colors duration-200 hover:text-[#FF8000]"
                   >
                     <span className="h-1 w-1 rounded-full bg-[#FF8000] opacity-0 transition-opacity group-hover:opacity-100" />
                     {item.label}
@@ -94,11 +91,11 @@ export default function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-2">
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider">
-              What We Do
+            <h3 className="font-heading mb-6 text-[19px] font-semibold tracking-wide">
+              What we do
             </h3>
 
-            <ul className="space-y-4 text-sm text-white/65">
+            <ul className="space-y-4 text-sm text-white/80">
               <li>Infrastructure Development</li>
               <li>Construction Solutions</li>
               <li>Project Management</li>
@@ -108,14 +105,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider">
-              Get In Touch
+            <h3 className="font-heading mb-6 text-[19px] font-semibold tracking-wide">
+              Get in touch
             </h3>
 
             <div className="space-y-5">
               <a
                 href="mailto:info@mastervisioninfra.com"
-                className="group flex items-start gap-3 text-sm text-white/65 transition-colors hover:text-[#FF8000]"
+                className="group flex items-start gap-3 text-sm text-white/80 transition-colors hover:text-[#FF8000]"
               >
                 <Mail
                   size={18}
@@ -126,13 +123,13 @@ export default function Footer() {
                 </span>
               </a>
 
-              <div className="flex items-start gap-3 text-sm text-white/65">
+              <div className="flex items-start gap-3 text-sm text-white/80">
                 <MapPin
                   size={18}
                   className="mt-0.5 shrink-0 text-[#FF8000]"
                 />
                 <span>
-                  Contact us for our office address and project locations.
+                  UGA-47, Galaxy Diamond Plaza, Haibatpur, Sector 4, Greater Noida, Uttar Pradesh 201016, India
                 </span>
               </div>
 
@@ -149,11 +146,11 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col gap-4 border-t border-white/15 py-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs leading-6 text-white/50">
+          <p className="text-xs leading-6 text-white/70">
             © {year} MasterVision Infra LLP. All rights reserved.
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/50">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/70">
             <Link
               to="/privacy-policy"
               className="transition-colors hover:text-white"
@@ -175,7 +172,7 @@ export default function Footer() {
               window.scrollTo({ top: 0, behavior: "smooth" })
             }
             aria-label="Scroll to top"
-            className="flex h-10 w-10 items-center justify-center self-start rounded-sm border border-white/20 transition-all hover:border-[#FF8000] hover:bg-[#FF8000] sm:self-auto"
+            className="flex h-10 w-10 items-center justify-center self-start rounded-md border border-white/25 transition-all hover:border-[#FF8000] hover:bg-[#FF8000] sm:self-auto"
           >
             <ArrowUp size={18} />
           </button>

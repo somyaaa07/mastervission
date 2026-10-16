@@ -4,10 +4,10 @@ import About from "../components/home/About";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import WhyChooseUs from "../components/home/WhychooseUs";
 import PricingPackages from "../components/home/PricingPackages";
-  import CostCalculator from "../components/home/CostCalculator";
+import CostCalculator from "../components/home/CostCalculator";
 import ServiceAreas from "../components/home/ServiceAreas";
 import HomeFaq from "../components/home/HomeFaq";
-// import CtaBanner from "../components/home/CtaBanner";
+import CtaBanner from "../components/home/CtaBanner";
 
 export default function Home() {
   return (

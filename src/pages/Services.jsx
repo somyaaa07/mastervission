@@ -19,7 +19,7 @@ export default function Services() {
       <CtaBanner
         title="Turn Your Ideas Into Reality"
         text="Get in touch with us today for a free consultation and let's create spaces that make a difference."
-        image="/images/cta-building.jpg"
+        image="/images/projects-cta.jpg"
       />
     </main>
   );

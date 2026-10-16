@@ -1,55 +1,60 @@
-import { motion } from "framer-motion";
-import { Building2, ClipboardCheck, Factory, HardHat, Home } from "lucide-react";
+import { ArrowRight, Building2, ClipboardCheck, Factory, HardHat, Home } from "lucide-react";
+import { Link } from "react-router-dom";
+import SafeImage from "../ui/SafeImage";
+import SectionHeader from "../ui/SectionHeader";
 
 const SERVICES = [
-  { icon: Home, title: "Residential Construction", text: "Dream homes built with precision." },
-  { icon: Building2, title: "Commercial Construction", text: "Spaces that power your business." },
-  { icon: Factory, title: "Industrial Construction", text: "Strong foundations for bigger dreams." },
-  { icon: HardHat, title: "Renovation & Remodeling", text: "Modern upgrades for lasting value." },
-  { icon: ClipboardCheck, title: "Project Management", text: "On-time delivery with complete transparency." },
+  { icon: Home, title: "Residential Construction", text: "Dream homes built with precision.", image: "/images/project-duplex.jpg" },
+  { icon: Building2, title: "Commercial Construction", text: "Spaces that power your business.", image: "/images/project-commercial.jpg" },
+  { icon: Factory, title: "Industrial Construction", text: "Strong foundations for bigger dreams.", image: "/images/project-factory.jpg" },
+  { icon: HardHat, title: "Renovation & Remodeling", text: "Modern upgrades for lasting value.", image: "/images/project-renovation.jpg" },
+  { icon: ClipboardCheck, title: "Project Management", text: "On-time delivery with complete transparency.", image: "/images/contact-hero.jpg" },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#FFFFFF] py-14 lg:py-16">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-5 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-10 lg:px-8">
-        {/* Intro */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="self-center"
-        >
-          <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
-            Our Services
-          </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[34px]">
-            Comprehensive Construction Solutions
-          </h2>
-          <p className="font-body mt-4 text-[14.5px] leading-[1.7] text-[#003B8E]/70">
-            From concept to completion, we provide end-to-end construction services tailored to your needs.
-          </p>
-        </motion.div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
-          {SERVICES.map(({ icon: Icon, title, text }, i) => (
-            <motion.article
-              key={title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-              className="group flex flex-col items-center rounded-lg border border-[#003B8E]/10 bg-[#FFFFFF] px-4 py-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#FF8000] hover:shadow-[0_12px_30px_rgba(0,59,142,0.12)]"
+    <section id="services" className="bg-[#FFFFFF] py-16 lg:py-24">
+      <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
+        <SectionHeader
+          eyebrow="Our services"
+          title="Comprehensive construction solutions"
+          text="From concept to completion, we provide end-to-end construction services tailored to your needs."
+          action={
+            <Link
+              to="/services"
+              className="font-body inline-flex w-fit items-center gap-2 rounded-md border border-[#003B8E] px-5 py-3 text-[14.5px] font-semibold text-[#003B8E] transition-colors duration-200 hover:bg-[#003B8E] hover:text-[#FFFFFF]"
             >
-              <Icon size={40} strokeWidth={1.4} color="#003B8E" className="transition-colors duration-300 group-hover:stroke-[#FF8000]" />
-              <h3 className="font-body mt-4 text-[14px] font-bold leading-snug text-[#003B8E]">{title}</h3>
-              <p className="font-body mt-2 text-[12px] leading-relaxed text-[#003B8E]/65">{text}</p>
-            </motion.article>
+              All services
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          }
+        />
+
+        <ul className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-5">
+          {SERVICES.map(({ icon: Icon, title, text, image }, i) => (
+            <li key={title} className={i === 4 ? "col-span-2 lg:col-span-1" : ""}>
+              <Link
+                to="/services"
+                className="group relative block aspect-[3/4] overflow-hidden rounded-md bg-[#003B8E] max-lg:aspect-[4/5] max-lg:max-sm:aspect-[3/4]"
+              >
+                <SafeImage
+                  src={image}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#002A66] via-[#003B8E]/45 to-[#003B8E]/5" />
+                <span className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                  <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-md bg-[#FF8000]">
+                    <Icon size={15} strokeWidth={1.6} color="#FFFFFF" aria-hidden="true" />
+                  </span>
+                  <span className="font-heading block text-[15px] font-semibold leading-[1.1] text-[#FFFFFF] sm:text-[15px]">{title}</span>
+                  <span className="font-body mt-2 block text-[13.5px] leading-snug text-[#FFFFFF]/85">{text}</span>
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

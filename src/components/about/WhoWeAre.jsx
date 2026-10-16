@@ -1,74 +1,53 @@
-import { motion } from "framer-motion";
 import { Clock, Lightbulb, ShieldCheck, Smile } from "lucide-react";
+import SectionHeader from "../ui/SectionHeader";
 
 const HIGHLIGHTS = [
-  { icon: ShieldCheck, label: "Quality Construction" },
-  { icon: Lightbulb, label: "Innovative Solutions" },
-  { icon: Clock, label: "On-Time Delivery" },
-  { icon: Smile, label: "Client Satisfaction" },
+  { icon: ShieldCheck, label: "Quality construction", text: "Checked at every stage" },
+  { icon: Lightbulb, label: "Innovative solutions", text: "Modern methods and materials" },
+  { icon: Clock, label: "On-time delivery", text: "Clear schedules we keep" },
+  { icon: Smile, label: "Client satisfaction", text: "Updates you can rely on" },
 ];
 
 export default function WhoWeAre() {
   return (
-    <section className="bg-[#FFFFFF] py-14 lg:py-16">
-      <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-5 lg:grid-cols-2 lg:gap-14 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
-            Who We Are
-          </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[36px]">
-            Mastervision Infra LLP
-          </h2>
-          <h3 className="font-body mt-2 text-[17px] font-bold text-[#003B8E]">
-            A Trusted Name in Construction &amp; Infrastructure
-          </h3>
-          <p className="font-body mt-4 max-w-[520px] text-[15px] leading-[1.75] text-[#003B8E]/75">
-            Mastervision Infra LLP is a leading construction company specializing in residential, commercial and
-            industrial projects. With years of experience, a skilled team and a customer-first approach, we deliver
-            spaces that combine functionality, aesthetics and long-term value.
-          </p>
-
-          <ul className="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-4">
-            {HIGHLIGHTS.map(({ icon: Icon, label }) => (
-              <li key={label} className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#FF8000]/40">
-                  <Icon size={20} strokeWidth={1.6} color="#FF8000" />
+    <section className="bg-[#FFFFFF] py-16 lg:py-24">
+      <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-5 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-8">
+        <div>
+          <SectionHeader
+            eyebrow="Who we are"
+            title="A trusted name in construction and infrastructure"
+            text="Mastervision Infra LLP specializes in residential, commercial and industrial projects. With years of experience, a skilled team and a customer-first approach, we deliver spaces that combine function, good design and long-term value."
+          />
+          <ul className="mt-9 grid gap-px overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#003B8E]/10 sm:grid-cols-2">
+            {HIGHLIGHTS.map(({ icon: Icon, label, text }) => (
+              <li key={label} className="flex items-start gap-4 bg-[#FFFFFF] p-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#003B8E]">
+                  <Icon size={20} strokeWidth={1.6} color="#FFFFFF" aria-hidden="true" />
                 </span>
-                <span className="font-body text-[12.5px] font-semibold leading-snug text-[#003B8E]">{label}</span>
+                <span>
+                  <span className="font-heading block text-[19px] font-semibold leading-tight text-[#003B8E]">{label}</span>
+                  <span className="font-body mt-1 block text-[13.5px] text-[#003B8E]/70">{text}</span>
+                </span>
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-lg"
-        >
+        <div className="relative">
           <img
-            src="/images/about-building.png
-            "
+            src="/images/about-building.jpg"
             alt="Modern commercial building built by Mastervision Infra LLP"
             loading="lazy"
-            className="aspect-[4/3] w-full object-cover"
+            className="aspect-[4/3] w-full rounded-md object-cover"
           />
-          <div className="absolute bottom-4 right-4 flex items-center gap-3 rounded-md bg-[#003B8E] px-5 py-3.5 sm:bottom-0 sm:right-0 sm:rounded-none sm:rounded-tl-lg">
-            <ShieldCheck size={30} strokeWidth={1.5} color="#FFFFFF" />
-            <p className="font-body text-[12.5px] font-semibold leading-snug text-[#FFFFFF]">
-              Spaces That Inspire
-              <span className="block font-medium text-[#FFFFFF]/80">Communities That Grow</span>
+          <div className="absolute -bottom-5 left-5 right-5 flex items-center gap-4 rounded-md border-l-4 border-[#FF8000] bg-[#003B8E] px-6 py-4 shadow-[0_20px_40px_-20px_rgba(0,20,60,0.6)] sm:left-auto sm:right-6">
+            <ShieldCheck size={30} strokeWidth={1.5} color="#FFFFFF" aria-hidden="true" />
+            <p className="font-heading text-[19px] font-semibold leading-tight text-[#FFFFFF]">
+              Spaces that inspire
+              <span className="font-body mt-0.5 block text-[13px] font-medium text-[#FFFFFF]/80">Communities that grow</span>
             </p>
-            <span className="h-8 w-[3px] -skew-x-12 bg-[#FF8000]" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,32 +1,27 @@
-import { motion } from "framer-motion";
 import { Building2, ShieldCheck, Star, Users } from "lucide-react";
 
 const STATS = [
-  { icon: Building2, value: "50+", label: "Projects Completed" },
-  { icon: Users, value: "100+", label: "Happy Clients" },
-  { icon: ShieldCheck, value: "10+", label: "Years of Experience" },
-  { icon: Star, value: "98%", label: "Client Satisfaction" },
+  { icon: Building2, value: "50+", label: "Projects completed" },
+  { icon: Users, value: "100+", label: "Happy clients" },
+  { icon: ShieldCheck, value: "10+", label: "Years of experience" },
+  { icon: Star, value: "98%", label: "Client satisfaction" },
 ];
 
 export default function AboutStats() {
   return (
-    <section className="bg-[#003B8E] py-10 lg:py-12">
-      <ul className="mx-auto grid max-w-[1280px] grid-cols-2 gap-y-9 px-5 lg:grid-cols-4 lg:px-8">
+    <section aria-label="Company highlights" className="bg-[#003B8E]">
+      <ul className="mx-auto grid max-w-[1280px] grid-cols-2 lg:grid-cols-4">
         {STATS.map(({ icon: Icon, value, label }, i) => (
-          <motion.li
+          <li
             key={label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-            className={`flex flex-col items-center text-center ${i > 0 ? "lg:border-l lg:border-[#FFFFFF]/25" : ""} ${
-              i === 2 ? "border-[#FFFFFF]/25" : ""
-            }`}
+            className={`flex items-center gap-4 px-5 py-8 lg:px-8 lg:py-10 ${i % 2 === 1 ? "border-l border-[#FFFFFF]/15" : ""} ${i > 1 ? "border-t border-[#FFFFFF]/15 lg:border-t-0" : ""} ${i > 0 ? "lg:border-l lg:border-[#FFFFFF]/15" : ""}`}
           >
-            <Icon size={30} strokeWidth={1.4} color="#FFFFFF" />
-            <p className="font-heading mt-3 text-[34px] font-bold leading-none text-[#FFFFFF]">{value}</p>
-            <p className="font-body mt-2 text-[13px] font-medium text-[#FFFFFF]/85">{label}</p>
-          </motion.li>
+            <Icon size={34} strokeWidth={1.3} color="#FF8000" aria-hidden="true" className="hidden shrink-0 sm:block" />
+            <div>
+              <p className="font-heading text-[40px] font-bold leading-none text-[#FFFFFF] lg:text-[48px]">{value}</p>
+              <p className="font-body mt-1.5 text-[13.5px] font-medium text-[#FFFFFF]/80">{label}</p>
+            </div>
+          </li>
         ))}
       </ul>
     </section>

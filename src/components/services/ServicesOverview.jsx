@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
 import { ArrowRight, Building2, ClipboardCheck, Factory, HardHat, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import SafeImage from "../ui/SafeImage";
+import SectionHeader from "../ui/SectionHeader";
 
 const SERVICES = [
   {
@@ -8,96 +9,82 @@ const SERVICES = [
     title: "Residential Construction",
     text: "Custom homes and residential spaces built with precision, quality and modern design.",
     image: "https://i.pinimg.com/736x/a9/15/a7/a915a721490370e52ca7ac4704439a22.jpg",
+    fallback: "/images/project-duplex.jpg",
   },
   {
     icon: Building2,
     title: "Commercial Construction",
     text: "Office spaces, retail outlets and commercial complexes that enhance your business.",
     image: "https://i.pinimg.com/736x/1e/b6/f8/1eb6f8627bebd446b3918f8cd270519c.jpg",
+    fallback: "/images/project-commercial.jpg",
   },
   {
     icon: Factory,
     title: "Industrial Construction",
     text: "Robust industrial infrastructure tailored for operational efficiency and safety.",
     image: "https://i.pinimg.com/736x/19/de/90/19de9080e6e5a2babb800a592a4a16a5.jpg",
+    fallback: "/images/project-factory.jpg",
   },
   {
     icon: HardHat,
     title: "Renovation & Remodeling",
     text: "Transform existing spaces with modern designs and improved functionality.",
     image: "https://i.pinimg.com/736x/f6/1f/d7/f61fd7ae53a369684804a7151381d8d7.jpg",
+    fallback: "/images/project-renovation.jpg",
   },
   {
     icon: ClipboardCheck,
     title: "Project Management",
     text: "On-time delivery with complete transparency and efficient project management.",
     image: "https://i.pinimg.com/736x/8d/65/b8/8d65b8017d4a865da61e0a574eb228e9.jpg",
+    fallback: "/images/contact-hero.jpg",
   },
 ];
 
 export default function ServicesOverview() {
   return (
-    <section className="bg-[#FFFFFF] py-14 lg:py-16">
+    <section className="bg-[#FFFFFF] py-16 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
-        <div className="flex items-start justify-between gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-              <span className="h-[2px] w-5 bg-[#FF8000]" />
-              Our Services
-            </p>
-            <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[36px]">
-              End-to-End Construction Services
-            </h2>
-            <p className="font-body mt-3 max-w-[540px] text-[14.5px] leading-[1.7] text-[#003B8E]/70">
-              We offer a wide range of construction and infrastructure services designed to meet the evolving needs
-              of residential, commercial and industrial clients.
-            </p>
-          </motion.div>
+        <SectionHeader
+          eyebrow="Our services"
+          title="End-to-end construction services"
+          text="A wide range of construction and infrastructure services designed for residential, commercial and industrial clients."
+        />
 
-          <p className="font-heading hidden shrink-0 pr-4 text-right text-[26px] font-semibold italic leading-tight text-[#003B8E] lg:block">
-            Building
-            <br />
-            With Purpose
-            <span className="ml-2 inline-block h-7 w-[3px] -skew-x-12 bg-[#FF8000] align-middle" />
-          </p>
-        </div>
-
-        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {SERVICES.map(({ icon: Icon, title, text, image }, i) => (
-            <motion.article
+        {/* 3 + 2 layout so the last two services get more room */}
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+          {SERVICES.map(({ icon: Icon, title, text, image, fallback }, i) => (
+            <article
               key={title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-              className="group flex flex-col rounded-lg border border-[#003B8E]/10 bg-[#FFFFFF] p-3.5 shadow-[0_10px_30px_rgba(0,59,142,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#FF8000]"
+              className={`group flex flex-col overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#FFFFFF] transition-shadow duration-300 hover:shadow-[0_24px_48px_-28px_rgba(0,59,142,0.5)] ${
+                i < 3 ? "lg:col-span-2" : "lg:col-span-3"
+              }`}
             >
-              <div className="flex items-center gap-3 px-1 pb-3.5 pt-1">
-                <Icon size={38} strokeWidth={1.4} color="#003B8E" className="shrink-0" />
-                <h3 className="font-body text-[14.5px] font-bold leading-snug text-[#003B8E]">{title}</h3>
-              </div>
-              <div className="aspect-[16/10] overflow-hidden rounded-[4px]">
-                <img
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <SafeImage
                   src={image}
+                  fallback={fallback}
                   alt={title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#003B8E]/55 via-transparent to-transparent" />
+                <span className="absolute bottom-0 left-0 flex h-14 w-14 items-center justify-center bg-[#FF8000]">
+                  <Icon size={26} strokeWidth={1.6} color="#FFFFFF" aria-hidden="true" />
+                </span>
               </div>
-              <p className="font-body mt-3.5 flex-1 px-1 text-[12.5px] leading-[1.65] text-[#003B8E]/75">{text}</p>
-              <Link
-                to="/contact"
-                className="font-body mt-3 inline-flex items-center gap-2 px-1 pb-1 text-[12.5px] font-bold text-[#FF8000] transition-colors hover:text-[#F04B00]"
-              >
-                Learn More
-                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </motion.article>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-heading text-[26px] font-semibold leading-tight text-[#003B8E]">{title}</h3>
+                <p className="font-body mt-2 flex-1 text-[15px] leading-[1.65] text-[#003B8E]/75">{text}</p>
+                <Link
+                  to="/contact"
+                  className="font-body mt-5 inline-flex w-fit items-center gap-2 border-b-2 border-[#FF8000] pb-0.5 text-[14px] font-semibold text-[#003B8E] transition-colors hover:text-[#FF8000]"
+                >
+                  Ask about {title.toLowerCase()}
+                  <ArrowRight size={15} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </div>

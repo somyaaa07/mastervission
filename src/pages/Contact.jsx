@@ -13,8 +13,8 @@ export default function Contact() {
       <ContactHero />
       <ContactCards />
 
-      <section className="bg-[#FFFFFF] py-8 lg:py-10">
-        <div className="mx-auto grid max-w-[1280px] gap-6 px-5 lg:grid-cols-2 lg:px-8">
+      <section className="bg-[#FFFFFF] py-12 lg:py-16">
+        <div className="mx-auto grid max-w-[1280px] gap-6 px-5 lg:grid-cols-2 lg:gap-8 lg:px-8">
           <ContactForm />
           <LocationMap />
         </div>
@@ -22,14 +22,14 @@ export default function Contact() {
 
       <WhyGetInTouch />
 
-      <section className="bg-[#FFFFFF] py-8 lg:py-10">
-        <div className="mx-auto grid max-w-[1280px] items-start gap-8 px-5 lg:grid-cols-2 lg:gap-10 lg:px-8">
+      <section className="bg-[#FFFFFF] py-16 lg:py-20">
+        <div className="mx-auto grid max-w-[1280px] items-start gap-10 px-5 lg:grid-cols-2 lg:gap-12 lg:px-8">
           <ContactPromise />
           <FaqAccordion />
         </div>
       </section>
 
-      <CtaBanner />
+      {/* <CtaBanner /> */}
     </main>
   );
 }

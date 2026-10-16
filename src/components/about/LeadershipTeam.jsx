@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import Avatar from "../ui/Avatar";
+import SectionHeader from "../ui/SectionHeader";
 
 const TEAM = [
   { name: "Ramesh Kumar", role: "Managing Partner", image: "/images/team-1.jpg", linkedin: "#" },
@@ -10,60 +11,44 @@ const TEAM = [
 
 export default function LeadershipTeam() {
   return (
-    <section className="bg-[#003B8E] py-14 lg:py-16">
+    <section className="bg-[#003B8E] py-16 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
-            Our Team
-          </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#FFFFFF] sm:text-[36px]">
-            Meet Our Leadership Team
-          </h2>
-          <p className="font-body mt-3 max-w-[520px] text-[14.5px] leading-[1.7] text-[#FFFFFF]/80">
-            A passionate and experienced team driving Mastervision Infra LLP towards a stronger tomorrow.
-          </p>
-        </motion.div>
+        <SectionHeader
+          light
+          eyebrow="Our team"
+          title="Meet our leadership team"
+          text="A passionate and experienced team driving Mastervision Infra LLP towards a stronger tomorrow."
+        />
 
-        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {TEAM.map((m, i) => (
-            <motion.article
-              key={m.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-              className="group overflow-hidden rounded-md bg-[#FFFFFF]"
-            >
-              <div className="aspect-[4/3] overflow-hidden bg-[#FFFFFF]">
-                <img
+        <ul className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+          {TEAM.map((m) => (
+            <li key={m.name} className="group overflow-hidden rounded-md bg-[#FFFFFF]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#002A66]">
+                <Avatar
                   src={m.image}
-                  alt={`${m.name}, ${m.role}`}
+                  name={m.name}
+                  textClass="text-[64px]"
                   loading="lazy"
                   className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
+                <span aria-hidden="true" className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-[#FF8000] transition-transform duration-500 group-hover:scale-x-100" />
               </div>
-              <div className="flex items-center justify-between gap-3 px-4 py-3.5">
-                <div>
-                  <h3 className="font-body text-[14px] font-bold text-[#003B8E]">{m.name}</h3>
-                  <p className="font-body mt-0.5 text-[12px] text-[#003B8E]/70">{m.role}</p>
+              <div className="flex items-start justify-between gap-3 p-4">
+                <div className="min-w-0">
+                  <h3 className="font-heading text-[20px] font-semibold leading-tight text-[#003B8E]">{m.name}</h3>
+                  <p className="font-body mt-1 text-[13px] text-[#003B8E]/70">{m.role}</p>
                 </div>
                 <a
                   href={m.linkedin}
                   aria-label={`${m.name} on LinkedIn`}
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[4px] bg-[#003B8E] text-[#FFFFFF] transition-colors duration-200 hover:bg-[#FF8000]"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#003B8E] text-[#FFFFFF] transition-colors duration-200 hover:bg-[#FF8000]"
                 >
-                  <Linkedin size={16} />
+                  <Linkedin size={16} aria-hidden="true" />
                 </a>
               </div>
-            </motion.article>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

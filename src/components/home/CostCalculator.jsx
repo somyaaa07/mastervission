@@ -9,6 +9,7 @@ import {
   Landmark,
   Layers,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PACKAGES = [
   { id: "basic", name: "Basic", rate: 1650, icon: Home },
@@ -68,12 +69,12 @@ export default function CostCalculator() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto max-w-[620px] text-center"
         >
-          <p className="font-body flex items-center justify-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
+          <p className="font-body flex items-center justify-center gap-3 text-[13px] font-semibold text-[#FF8000]">
+            <span aria-hidden="true" className="h-[3px] w-8 bg-[#FF8000]" />
             Cost Calculator
             <span className="h-[2px] w-5 bg-[#FF8000]" />
           </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[34px]">
+          <h2 className="font-heading mt-3 text-[34px] font-bold leading-[1.05] text-[#003B8E] sm:text-[44px] lg:text-[48px]">
             Estimate Your Construction Cost
           </h2>
           <p className="font-body mt-4 text-[15px] leading-[1.75] text-[#003B8E]/75">
@@ -88,7 +89,7 @@ export default function CostCalculator() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="border border-[#003B8E]/15 bg-[#FFFFFF] px-6 py-8 sm:px-9 rounded-xl"
+            className="border border-[#003B8E]/15 bg-[#FFFFFF] px-6 py-8 sm:px-9 rounded-md"
           >
             {/* Project type */}
             <Label>Project Type</Label>
@@ -100,8 +101,8 @@ export default function CostCalculator() {
                   onClick={() => setType(t.id)}
                   className={`font-body px-3 py-3 text-[13px] font-bold transition-colors ${
                     type === t.id
-                      ? "bg-[#003B8E] text-[#FFFFFF] rounded-xl"
-                      : "border border-[#003B8E]/25 text-[#003B8E] hover:border-[#003B8E] rounded-xl"
+                      ? "bg-[#003B8E] text-[#FFFFFF] rounded-md"
+                      : "border border-[#003B8E]/25 text-[#003B8E] hover:border-[#003B8E] rounded-md"
                   }`}
                 >
                   {t.label}
@@ -122,8 +123,8 @@ export default function CostCalculator() {
                       onClick={() => setPkg(id)}
                       className={`flex items-center gap-3 px-4 py-3.5 text-left transition-colors ${
                         active
-                          ? "border border-[#003B8E] bg-[#003B8E] rounded-xl"
-                          : "border border-[#003B8E]/25 hover:border-[#003B8E] rounded-xl"
+                          ? "border border-[#003B8E] bg-[#003B8E] rounded-md"
+                          : "border border-[#003B8E]/25 hover:border-[#003B8E] rounded-md"
                       }`}
                     >
                       <span
@@ -143,7 +144,7 @@ export default function CostCalculator() {
                         </span>
                         <span
                           className={`font-body text-[12px] font-semibold  ${
-                            active ? "text-[#FFFFFF]/75" : "text-[#003B8E]/60 "
+                            active ? "text-[#FFFFFF]/75" : "text-[#003B8E]/70 "
                           }`}
                         >
                           {formatINR(rate)} / sq.ft
@@ -168,9 +169,9 @@ export default function CostCalculator() {
                     onChange={(e) =>
                       setArea(Math.min(10000, Math.max(500, Number(e.target.value) || 500)))
                     }
-                    className="font-body w-24 border border-[#003B8E]/25 px-3 py-1.5 text-right text-[14px] font-bold text-[#003B8E] outline-none focus:border-[#003B8E] rounded-xl"
+                    className="font-body w-24 border border-[#003B8E]/25 px-3 py-1.5 text-right text-[14px] font-bold text-[#003B8E] outline-none focus:border-[#003B8E] rounded-md"
                   />
-                  <span className="font-body text-[12px] font-semibold text-[#003B8E]/60 ">sq.ft</span>
+                  <span className="font-body text-[12px] font-semibold text-[#003B8E]/70 ">sq.ft</span>
                 </div>
               </div>
               <input
@@ -185,7 +186,7 @@ export default function CostCalculator() {
                   background: `linear-gradient(to right, #FF8000 ${pct}%, rgba(0,59,142,0.15) ${pct}%)`,
                 }}
               />
-              <div className="font-body mt-2 flex justify-between text-[11px] font-semibold text-[#003B8E]/50">
+              <div className="font-body mt-2 flex justify-between text-[11px] font-semibold text-[#003B8E]/70">
                 <span>500</span>
                 <span>10,000</span>
               </div>
@@ -198,7 +199,7 @@ export default function CostCalculator() {
                 <button
                   type="button"
                   onClick={() => setFloors((f) => Math.max(1, f - 1))}
-                  className="font-body h-10 w-10 text-[18px] font-bold text-[#003B8E] transition-colors hover:bg-[#003B8E] hover:text-[#FFFFFF] rounded-xl"
+                  className="font-body h-10 w-10 text-[18px] font-bold text-[#003B8E] transition-colors hover:bg-[#003B8E] hover:text-[#FFFFFF] rounded-md"
                   aria-label="Decrease floors"
                 >
                   −
@@ -230,8 +231,8 @@ export default function CostCalculator() {
                       onClick={() => toggleAddon(a.id)}
                       className={`flex items-center gap-3 px-4 py-3 text-left transition-colors ${
                         on
-                          ? "border border-[#003B8E] bg-[#003B8E]/[0.05] rounded-xl"
-                          : "border border-[#003B8E]/25 hover:border-[#003B8E] rounded-xl"
+                          ? "border border-[#003B8E] bg-[#003B8E]/[0.05] rounded-md"
+                          : "border border-[#003B8E]/25 hover:border-[#003B8E] rounded-md"
                       }`}
                     >
                       <span
@@ -244,7 +245,7 @@ export default function CostCalculator() {
                       <span className="font-body flex-1 text-[13px] font-semibold text-[#003B8E]">
                         {a.label}
                       </span>
-                      <span className="font-body text-[11.5px] font-semibold text-[#003B8E]/55">
+                      <span className="font-body text-[11.5px] font-semibold text-[#003B8E]/70">
                         +{formatINR(a.rate)}/sq.ft
                       </span>
                     </button>
@@ -260,7 +261,7 @@ export default function CostCalculator() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
-            className="relative flex flex-col self-start overflow-hidden bg-[#003B8E] shadow-[0_20px_50px_-15px_rgba(0,59,142,0.5)] lg:sticky lg:top-24 rounded-xl"
+            className="relative flex flex-col self-start overflow-hidden bg-[#003B8E] shadow-[0_20px_50px_-15px_rgba(0,59,142,0.5)] lg:sticky lg:top-24 rounded-md"
           >
             <div
               className="absolute right-0 top-0 h-[70px] w-[110px] bg-[#FF8000]"
@@ -274,8 +275,8 @@ export default function CostCalculator() {
             />
 
             <div className="px-7 pb-8 pt-9">
-              <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-                <span className="h-[2px] w-5 bg-[#FF8000]" />
+              <p className="font-body flex items-center gap-3 text-[13px] font-semibold text-[#FF8000]">
+                <span aria-hidden="true" className="h-[3px] w-8 bg-[#FF8000]" />
                 Estimated Cost
               </p>
 
@@ -289,7 +290,6 @@ export default function CostCalculator() {
                 >
                   {formatINR(result.total)}
                 </motion.span>
-                <span className="mb-2 inline-block h-6 w-[3px] -skew-x-12 bg-[#FF8000]" />
               </div>
               <p className="font-body mt-2 text-[12.5px] font-semibold text-[#FFFFFF]/70">
                 Range: {formatINR(result.low)} – {formatINR(result.high)}
@@ -306,9 +306,9 @@ export default function CostCalculator() {
                 {result.addonsCost > 0 && <Row label="Add-ons" value={formatINR(result.addonsCost)} />}
               </ul>
 
-              <a
-                href="#contact"
-                className="font-body group mt-8 flex items-center justify-center gap-2 bg-[#FF8000] px-6 py-3.5 text-[13px] font-bold tracking-[0.04em] text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF] hover:text-[#003B8E]"
+              <Link
+                to="/contact"
+                className="font-body group mt-8 flex items-center justify-center gap-2 bg-[#FF8000] px-6 py-3.5 text-[14.5px] font-semibold text-[#FFFFFF] transition-colors hover:bg-[#FFFFFF] hover:text-[#003B8E]"
               >
                 Get Detailed Quote
                 <ArrowRight
@@ -316,8 +316,8 @@ export default function CostCalculator() {
                   strokeWidth={2}
                   className="transition-transform group-hover:translate-x-1"
                 />
-              </a>
-              <p className="font-body mt-4 text-center text-[11px] leading-snug text-[#FFFFFF]/55">
+              </Link>
+              <p className="font-body mt-4 text-center text-[11px] leading-snug text-[#FFFFFF]/80">
                 * Indicative estimate. Final cost depends on site conditions, design and material selection.
               </p>
             </div>
@@ -330,7 +330,7 @@ export default function CostCalculator() {
 
 function Label({ children }) {
   return (
-    <p className="font-body text-[12px] font-bold uppercase tracking-[0.08em] text-[#003B8E]">
+    <p className="font-body text-[13px] font-semibold text-[#003B8E]">
       {children}
     </p>
   );

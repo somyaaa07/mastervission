@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import Avatar from "../ui/Avatar";
+import SectionHeader from "../ui/SectionHeader";
 
 const TESTIMONIALS = [
   {
@@ -44,47 +46,33 @@ export default function ClientTestimonials() {
   const next = () => setPage((p) => (p + 1) % PAGES);
 
   return (
-    <section className="bg-[#FFFFFF] py-14 lg:py-16">
+    <section className="bg-[#F5F8FD] py-16 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-end justify-between gap-6"
-        >
-          <div>
-            <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-              <span className="h-[2px] w-5 bg-[#FF8000]" />
-              Client Testimonials
-            </p>
-            <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[36px]">
-              What Our Clients Say
-            </h2>
-            <p className="font-body mt-3 max-w-[460px] text-[14.5px] leading-[1.7] text-[#003B8E]/70">
-              We take pride in the trust and appreciation we receive from our clients.
-            </p>
-          </div>
-
-          <div className="flex shrink-0 gap-3">
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Previous testimonials"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#003B8E]/25 text-[#003B8E] transition-colors duration-200 hover:border-[#FF8000] hover:text-[#FF8000]"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Next testimonials"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#003B8E] text-[#FFFFFF] transition-colors duration-200 hover:bg-[#FF8000]"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
-        </motion.div>
+        <SectionHeader
+          eyebrow="Client testimonials"
+          title="What our clients say"
+          text="We take pride in the trust and appreciation we receive from our clients."
+          action={
+            <div className="flex shrink-0 gap-2">
+              <button
+                type="button"
+                onClick={prev}
+                aria-label="Previous testimonials"
+                className="flex h-11 w-11 items-center justify-center rounded-md border border-[#003B8E]/25 text-[#003B8E] transition-colors duration-200 hover:border-[#FF8000] hover:text-[#FF8000]"
+              >
+                <ChevronLeft size={18} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={next}
+                aria-label="Next testimonials"
+                className="flex h-11 w-11 items-center justify-center rounded-md bg-[#003B8E] text-[#FFFFFF] transition-colors duration-200 hover:bg-[#FF8000]"
+              >
+                <ChevronRight size={18} aria-hidden="true" />
+              </button>
+            </div>
+          }
+        />
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -93,26 +81,25 @@ export default function ClientTestimonials() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -24 }}
             transition={{ duration: 0.35 }}
-            className="mt-9 grid gap-5 lg:grid-cols-2"
+            className="mt-10 grid gap-5 lg:grid-cols-2"
           >
             {items.map((t) => (
-              <article
-                key={t.name}
-                className="relative flex items-start gap-5 rounded-lg border border-[#003B8E]/10 bg-[#FFFFFF] p-6 shadow-[0_10px_30px_rgba(0,59,142,0.06)]"
-              >
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  loading="lazy"
-                  className="h-16 w-16 shrink-0 rounded-full border-2 border-[#FFFFFF] object-cover shadow-md"
-                />
-                <div className="min-w-0">
-                  <Quote size={22} color="#FF8000" className="mb-1 opacity-70" />
-                  <p className="font-body text-[13.5px] leading-[1.75] text-[#003B8E]/85">{t.quote}</p>
-                  <p className="font-body mt-3 text-[14px] font-bold text-[#003B8E]">{t.name}</p>
-                  <p className="font-body text-[12px] text-[#003B8E]/65">{t.role}</p>
-                </div>
-              </article>
+              <figure key={t.name} className="relative flex flex-col border-t-4 border-[#FF8000] bg-[#FFFFFF] p-7 shadow-[0_18px_40px_-26px_rgba(0,59,142,0.35)] sm:p-9">
+                <Quote size={34} color="#FF8000" aria-hidden="true" className="opacity-80" />
+                <blockquote className="font-body mt-4 flex-1 text-[16.5px] leading-[1.75] text-[#003B8E]">{t.quote}</blockquote>
+                <figcaption className="mt-7 flex items-center gap-4 border-t border-[#003B8E]/10 pt-5">
+                  <Avatar
+                    src={t.image}
+                    name={t.name}
+                    loading="lazy"
+                    className="h-14 w-14 shrink-0 rounded-md object-cover"
+                  />
+                  <span>
+                    <span className="font-heading block text-[20px] font-semibold leading-tight text-[#003B8E]">{t.name}</span>
+                    <span className="font-body block text-[13px] text-[#003B8E]/70">{t.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
             ))}
           </motion.div>
         </AnimatePresence>

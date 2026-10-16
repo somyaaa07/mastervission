@@ -9,7 +9,7 @@ export default function Projects() {
     <main className="font-body bg-[#FFFFFF] text-[#003B8E]">
       <ProjectsHero />
       <ProjectsGallery />
-      <ProjectStats />
+      {/* <ProjectStats /> */}
       <ProjectsCta />
       <ProjectsTestimonials />
     </main>

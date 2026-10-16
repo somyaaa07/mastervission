@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import SectionHeader from "../ui/SectionHeader";
 
 const POINTS = [
   "A decade of industry experience",
@@ -10,64 +10,37 @@ const POINTS = [
 
 export default function OurStory() {
   return (
-    <section className="bg-[#FFFFFF]">
-      <div className="grid lg:grid-cols-[48%_1fr]">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative min-h-[280px] lg:min-h-[420px]"
-        >
+    <section className="bg-[#F5F8FD]">
+      <div className="grid lg:grid-cols-[1.05fr_1fr]">
+        <div className="relative min-h-[300px] bg-[#003B8E] lg:min-h-[520px]">
           <video
-            src="/about-story.mp4"
+            src="/our-story.mp4"
+            poster="/images/about-site.jpg"
             autoPlay
             muted
             loop
             playsInline
             preload="metadata"
+            aria-label="Mastervision Infra project sites"
             className="absolute inset-0 h-full w-full object-cover"
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col justify-center px-5 py-12 lg:px-14 lg:py-14"
-        >
-          <p className="font-body flex items-center gap-2 text-[12px] font-bold tracking-[0.08em] text-[#FF8000]">
-            <span className="h-[2px] w-5 bg-[#FF8000]" />
-            Our Story
-          </p>
-          <h2 className="font-heading mt-3 text-[30px] font-bold leading-[1.15] text-[#003B8E] sm:text-[36px]">
-            A Journey of Growth and Excellence
-          </h2>
-          <p className="font-body mt-4 max-w-[500px] text-[15px] leading-[1.75] text-[#003B8E]/75">
-            Founded with a vision to redefine the construction industry,
-            Mastervision Infra LLP has grown into a trusted partner for
-            residential, commercial and industrial projects. Our journey is
-            built on trust, expertise and a passion for creating spaces that
-            make a difference.
-          </p>
-          <ul className="mt-6 space-y-3">
+        <div className="flex flex-col justify-center px-5 py-14 lg:px-16 lg:py-20">
+          <SectionHeader
+            eyebrow="Our story"
+            title="A journey of growth and excellence"
+            text="Mastervision Infra LLP was founded to raise the standard of construction. It has since grown into a trusted partner for residential, commercial and industrial projects, built on trust, expertise and a passion for spaces that make a difference."
+          />
+          <ul className="mt-8 divide-y divide-[#003B8E]/10 border-y border-[#003B8E]/10">
             {POINTS.map((p) => (
-              <li
-                key={p}
-                className="font-body flex items-center gap-3 text-[14px] font-medium text-[#003B8E]"
-              >
-                <CheckCircle2
-                  size={20}
-                  fill="#FF8000"
-                  color="#FFFFFF"
-                  className="shrink-0"
-                />
+              <li key={p} className="font-body flex items-center gap-3 py-3.5 text-[15px] font-medium text-[#003B8E]">
+                <CheckCircle2 size={20} fill="#FF8000" color="#FFFFFF" aria-hidden="true" className="shrink-0" />
                 {p}
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
