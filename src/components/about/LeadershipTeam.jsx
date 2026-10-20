@@ -3,10 +3,10 @@ import Avatar from "../ui/Avatar";
 import SectionHeader from "../ui/SectionHeader";
 
 const TEAM = [
-  { name: "Ramesh Kumar", role: "Managing Partner", image: "/images/team-1.jpg", linkedin: "#" },
-  { name: "Anjali Verma", role: "Project Director", image: "/images/team-2.jpg", linkedin: "#" },
-  { name: "Vikram Singh", role: "Operations Head", image: "/images/team-3.jpg", linkedin: "#" },
-  { name: "Pooja Sharma", role: "Business Development", image: "/images/team-4.jpg", linkedin: "#" },
+  { name: "Shalu Chaudhary", role: "Director , Interior designer", image: "/images/1.jpeg", linkedin: "#" },
+  { name: "Chetan Chaudhary ", role: "Founder, Interior designer", image: "/images/3.jpeg", linkedin: "#" },
+  { name: "Deepak", role: "Interior Designer", image: "/images/4.jpeg", linkedin: "#" },
+  { name: "Vivek", role: "Interior Designer", image: "/images/2.jpeg", linkedin: "#" },
 ];
 
 export default function LeadershipTeam() {
