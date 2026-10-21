@@ -50,7 +50,7 @@ export default function LeadershipTeam() {
                   className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
 
-                <span className="absolute left-3 top-3 rounded-full bg-[#FF8000] px-2.5 py-1 font-body text-[12px] font-semibold text-[#002A66] shadow-sm">
+                <span className="absolute right-1 top-1 rounded-full bg-[#FF8000] px-2.5 py-1 font-body text-[12px] font-semibold text-[#002A66] shadow-sm">
                   {m.years} yrs
                 </span>
 
