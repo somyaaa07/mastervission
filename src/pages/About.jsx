@@ -15,10 +15,12 @@ export default function About() {
       <WhoWeAre />
       <AboutStats />
       <MissionVisionValues />
+      
       <OurStory />
+       <CtaBanner />
       <WorkProcess />
       <LeadershipTeam />
-       <CtaBanner />
+      
       <ClientTestimonials />
      
     </main>
