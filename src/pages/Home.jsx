@@ -18,7 +18,7 @@ export default function Home() {
       <FeaturedProjects />
       <WhyChooseUs />
       <PricingPackages/>
-      <CostCalculator/>
+      {/* <CostCalculator/> */}
       <ServiceAreas/>
       <HomeFaq/>
 

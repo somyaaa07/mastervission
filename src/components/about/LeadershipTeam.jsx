@@ -19,7 +19,7 @@ export default function LeadershipTeam() {
           light
           eyebrow="Our team"
           title="Meet our leadership team"
-          text="A passionate and experienced team driving Mastervision Infra LLP towards a stronger tomorrow."
+          text="A passionate and experienced team driving Mastervision Infra towards a stronger tomorrow."
         />
 
         <ul className="mt-12 flex flex-wrap justify-center gap-4 lg:gap-6">

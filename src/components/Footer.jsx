@@ -36,18 +36,18 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link
               to="/"
-              aria-label="MasterVision Infra LLP home"
+              aria-label="MasterVision Infra home"
               className="inline-flex rounded-md bg-white p-3"
             >
               <img
                 src="/footer-logo.png"
-                alt="MasterVision Infra LLP"
+                alt="MasterVision Infra"
                 className="h-14 w-auto object-contain"
               />
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/80">
-              MasterVision Infra LLP is committed to building quality-driven
+              MasterVision Infra is committed to building quality-driven
               homes through thoughtful planning, reliable execution,
               and a vision for sustainable growth.
             </p>
@@ -147,7 +147,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col gap-4 border-t border-white/15 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs leading-6 text-white/70">
-            © {year} MasterVision Infra LLP. All rights reserved.
+            © {year} MasterVision Infra. All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/70">

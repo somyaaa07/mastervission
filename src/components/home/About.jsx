@@ -34,7 +34,7 @@ export default function About() {
         <div className="flex flex-col justify-center px-5 py-14 lg:px-16 lg:py-20">
           <SectionHeader
             eyebrow="About us"
-            title="Welcome to Mastervision Infra LLP"
+            title="Welcome to Mastervision Infra"
             text="We are a team of experienced professionals dedicated to delivering quality construction solutions for a better tomorrow. With a focus on innovation, sustainability and client satisfaction, we bring your ideas to life, on time and within budget."
           />
 

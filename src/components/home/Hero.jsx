@@ -131,7 +131,7 @@ export default function Hero({ onQuoteSubmit }) {
           </motion.h1>
 
           <motion.p {...enter(0.18)} className="font-body mt-6 max-w-[540px] text-[14px] leading-[1.7] text-[#FFFFFF]/90 sm:text-[14.5px]">
-            Mastervision Infra LLP builds villas, apartments and township homes on schedule, with a clear
+            Mastervision Infra builds villas, apartments and township homes on schedule, with a clear
             cost and progress update at every stage.
           </motion.p>
 

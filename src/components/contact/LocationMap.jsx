@@ -32,7 +32,7 @@ export default function LocationMap() {
       {/* Google Map */}
       <div className="mt-5 min-h-[280px] flex-1 overflow-hidden rounded-md bg-white">
         <iframe
-          title="Mastervision Infra LLP office location"
+          title="Mastervision Infra office location"
           src={`https://www.google.com/maps?q=${encodeURIComponent(
             ADDRESS_QUERY
           )}&output=embed`}

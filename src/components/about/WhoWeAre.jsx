@@ -16,7 +16,7 @@ export default function WhoWeAre() {
           <SectionHeader
             eyebrow="Who we are"
             title="A trusted name in residential construction"
-            text="Mastervision Infra LLP specializes in residential projects, from villas and apartments to township homes. With years of experience, a skilled team and a customer-first approach, we deliver homes that combine function, good design and long-term value."
+            text="Mastervision Infra specializes in residential projects, from villas and apartments to township homes. With years of experience, a skilled team and a customer-first approach, we deliver homes that combine function, good design and long-term value."
           />
           <ul className="mt-9 grid gap-px overflow-hidden rounded-md border border-[#003B8E]/10 bg-[#003B8E]/10 sm:grid-cols-2">
             {HIGHLIGHTS.map(({ icon: Icon, label, text }) => (
@@ -36,7 +36,7 @@ export default function WhoWeAre() {
         <div className="relative">
           <img
             src="/images/project-villa.jpg"
-            alt="Modern luxury villa built by Mastervision Infra LLP"
+            alt="Modern luxury villa built by Mastervision Infra"
             loading="lazy"
             className="aspect-[4/3] w-full rounded-md object-cover"
           />

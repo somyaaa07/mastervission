@@ -51,10 +51,10 @@ export default function Navbar() {
     >
       <nav aria-label="Main" className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-5 lg:h-[84px] lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex shrink-0 items-center" aria-label="Mastervision Infra LLP – Home">
+        <Link to="/" className="flex shrink-0 items-center" aria-label="Mastervision Infra – Home">
           <img
             src="/logo.png"
-            alt="Mastervision Infra LLP"
+            alt="Mastervision Infra"
             className="h-15 w-auto object-contain lg:h-[80px]"
           />
         </Link>
@@ -145,7 +145,7 @@ export default function Navbar() {
             >
               {/* Drawer header */}
               <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-[#003B8E]/10 px-5">
-                <Link to="/" className="flex items-center" aria-label="Mastervision Infra LLP – Home">
+                <Link to="/" className="flex items-center" aria-label="Mastervision Infra – Home">
                   <img src="/logo.png" alt="" className="h-10 w-auto object-contain" />
                 </Link>
                 <button

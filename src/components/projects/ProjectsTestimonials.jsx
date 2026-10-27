@@ -7,7 +7,7 @@ import SectionHeader from "../ui/SectionHeader";
 const TESTIMONIALS = [
   {
     quote:
-      "Mastervision Infra LLP delivered our project on time with exceptional quality. Their professionalism and attention to detail are truly commendable.",
+      "Mastervision Infra delivered our project on time with exceptional quality. Their professionalism and attention to detail are truly commendable.",
     name: "Ramesh Kumar",
     role: "Homeowner",
     image: "/images/client-1.jpg",

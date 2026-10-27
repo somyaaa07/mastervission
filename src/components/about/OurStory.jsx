@@ -30,7 +30,7 @@ export default function OurStory() {
           <SectionHeader
             eyebrow="Our story"
             title="A journey of growth and excellence"
-            text="Mastervision Infra LLP was founded to raise the standard of construction. It has since grown into a trusted partner for homeowners, built on trust, expertise and a passion for homes that make a difference."
+            text="Mastervision Infra was founded to raise the standard of construction. It has since grown into a trusted partner for homeowners, built on trust, expertise and a passion for homes that make a difference."
           />
           <ul className="mt-8 divide-y divide-[#003B8E]/10 border-y border-[#003B8E]/10">
             {POINTS.map((p) => (
